@@ -1,0 +1,251 @@
+# Copyright (C) 2014 Sami Keijonen
+# This file is distributed under the GNU General Public License v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Kulkuri 1.0\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/support/theme/style\n"
+"POT-Creation-Date: 2014-05-29 18:25:48+00:00\n"
+"PO-Revision-Date: 2014-05-29 21:27+0200\n"
+"Last-Translator: Sami Keijonen <sami.keijonen@foxnet.fi>\n"
+"Language-Team: Foxnet Themes <sami.keijonen@foxnet.fi>\n"
+"Language: fi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.5\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: 404.php:15
+msgid "Oops! That page can&rsquo;t be found."
+msgstr "Ups! Tätä sivua ei löydy."
+
+#: 404.php:19
+msgid ""
+"It looks like nothing was found at this location. Maybe try one of the links "
+"below or a search?"
+msgstr ""
+"Näyttää siltä, että mitään ei löytynyt tästä osoitteesta. Koita navigoida "
+"alla olevista linkeistä tai etsiä haluamaasi."
+
+#: 404.php:27
+msgid "Most Used Categories"
+msgstr "Käytetyimmät kategoriat"
+
+#. translators: %1$s: smiley
+#: 404.php:44
+msgid "Try looking in the monthly archives. %1$s"
+msgstr "Koita etsiä kuukausiarkistosta. %1$s"
+
+#: comments.php:35 comments.php:52
+msgid "Comment navigation"
+msgstr "Kommenttien selaus"
+
+#: comments.php:36 comments.php:53
+msgid "&larr; Older Comments"
+msgstr "&larr; Vanhemmat kommentit"
+
+#: comments.php:37 comments.php:54
+msgid "Newer Comments &rarr;"
+msgstr "Uudemmat kommentit &rarr;"
+
+#: comments.php:64
+msgid "Comments are closed."
+msgstr "Kommentointi on suljettu."
+
+#: content-none.php:13
+msgid "Nothing Found"
+msgstr "Mitään ei löytynyt"
+
+#: content-none.php:19
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+"Oletko valmis julkaisemaan ensimmäisen kirjoituksesi? <a href=\"%1$s"
+"\">Aloita tästä</a>."
+
+#: content-none.php:23
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+"Hakusi ei valitettavasti tuottanut yhtään tulosta. Yritä uudelleen eri "
+"hakusanoilla."
+
+#: content-none.php:28
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr "Emme valitettavasti löytäneet etsimääsi. Ehkä hakutoiminnosta on apua."
+
+#: content-page.php:18 content-single.php:20
+msgid "Pages:"
+msgstr "Sivut:"
+
+#: content-single.php:27 content.php:25 pages/front-page.php:109
+msgid "Posted in %s"
+msgstr "Artikkeli kategoriassa %s"
+
+#: content-single.php:28 content.php:26 pages/front-page.php:110
+msgid "Tagged %s"
+msgstr "Avainsanat %s"
+
+#: functions - Copy.php:72
+msgid "Front page Menu"
+msgstr "Etusivun valikko"
+
+#: functions - Copy.php:73
+msgid "Other pages Menu"
+msgstr "Muiden sivujen valikko"
+
+#: functions - Copy.php:74 functions.php:74
+msgid "Social Menu"
+msgstr "Somevalikko"
+
+#: functions - Copy.php:131 functions.php:131
+msgid "A sidebar located in the footer of the site."
+msgstr "Sivupalkki sijaitsee alapalkissa."
+
+#: functions - Copy.php:163 Copy.php:176 functions.php:163 functions.php:176
+msgid "Menu"
+msgstr "Valikko"
+
+#: functions - Copy.php:224 functions.php:224
+msgid "Read more"
+msgstr "Lue lisää"
+
+#: functions.php:72
+msgid "Front Page Menu"
+msgstr "Etusivun valikko"
+
+#: functions.php:73
+msgid "Not Front Page Menu"
+msgstr "Muiden sivujen valikko"
+
+#: header.php:24
+msgid "Skip to content"
+msgstr "Hyppää sisältöön"
+
+#: inc/customizer.php:24
+msgid "Theme"
+msgstr "Teema"
+
+#: inc/customizer.php:44
+msgid "Use boxed layout in all pages."
+msgstr "Käytä \"laatikko\"-ulkoasua kaikilla sivuilla."
+
+#: inc/customizer.php:67
+msgid "Callout URL"
+msgstr "Callout URL-linkki"
+
+#: inc/customizer.php:88
+msgid "Callout URL text"
+msgstr "Callout URL-linkin teksti"
+
+#. Translators: %s stands for number. For example Select page 1.
+#: inc/customizer.php:115
+msgid "Select page %s"
+msgstr "Valitse sivu %s"
+
+#: inc/customizer.php:137
+msgid "Background color %s"
+msgstr "Taustaväri %s"
+
+#: inc/customizer.php:159
+msgid "Background image %s"
+msgstr "Taustakuva %s"
+
+#: inc/customizer.php:184
+msgid "Show latest posts on front page"
+msgstr "Näytä viimeisimmät artikkelit etusivulla"
+
+#: inc/customizer.php:208
+msgid "Show random testimonials on front page"
+msgstr "Näytä satunnaiset suositukset etusivulla"
+
+#: inc/customizer.php:233
+msgid "Upload custom logo."
+msgstr "Lataa logo."
+
+#: inc/extras.php:63
+msgid "Page %s"
+msgstr "Sivu %s"
+
+#: inc/template-tags.php:21
+msgid "Posts navigation"
+msgstr "Artikkelien selaus"
+
+#: inc/template-tags.php:25
+msgid "<span class=\"screen-reader-text meta-nav\">&larr;</span> Older posts"
+msgstr ""
+"<span class=\"screen-reader-text meta-nav\">&larr;</span> Vanhemmat "
+"artikkelit"
+
+#: inc/template-tags.php:29
+msgid "Newer posts <span class=\"screen-reader-text meta-nav\">&rarr;</span>"
+msgstr ""
+"Uudemmat artikkelit <span class=\"screen-reader-text meta-nav\">&rarr;</span>"
+
+#: inc/template-tags.php:52
+msgid "Post navigation"
+msgstr "Artikkelien selaus"
+
+#: search.php:16
+msgid "Search Results for: %s"
+msgstr "Hakutulokset haulle: %s"
+
+#. Theme Name of the plugin/theme
+msgid "Kulkuri"
+msgstr "Kulkuri"
+
+#. Theme URI of the plugin/theme
+msgid "https://foxnet-themes.fi/downloads/kulkuri"
+msgstr "https://foxnet-themes.fi/downloads/kulkuri"
+
+#. Description of the plugin/theme
+msgid ""
+"Fantastic One Page theme! You can literally do everything in just one page "
+"and scroll to your content using beautiful fixed navigation."
+msgstr ""
+"Fantastinen yhden sivun teema! Voit käytännössä esittää kaiken tiedon "
+"yhdellä sivulla ja hienon navigoinnin avulla pääset liikkumaan sivulla "
+"vaivatta."
+
+#. Author of the plugin/theme
+msgid "Sami Keijonen"
+msgstr "Sami Keijonen"
+
+#. Author URI of the plugin/theme
+msgid "https://foxnet-themes.fi"
+msgstr "https://foxnet-themes.fi/"
+
+#. Template Name of the plugin/theme
+msgid "Front Page"
+msgstr "Etusivu"
+
+#: comments.php:28
+msgctxt "comments title"
+msgid "One thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] "Yksi kommentti: &ldquo;%2$s&rdquo;"
+msgstr[1] "%1$s kommenttia: &ldquo;%2$s&rdquo;"
+
+#: functions - Copy.php:130 functions.php:130
+msgctxt "sidebar"
+msgid "Subsidiary"
+msgstr "Alapalkin vimpainalue"
+
+#: inc/template-tags.php:55
+msgctxt "Previous post link"
+msgid "<span class=\"screen-reader-text meta-nav\">&larr;</span> %title"
+msgstr "<span class=\"screen-reader-text meta-nav\">&larr;</span> %title"
+
+#: inc/template-tags.php:56
+msgctxt "Next post link"
+msgid "%title <span class=\"screen-reader-text meta-nav\">&rarr;</span>"
+msgstr "%title <span class=\"screen-reader-text meta-nav\">&rarr;</span>"
+
+#. Translators: Separates tags, categories, etc. when displaying a post.
+#: inc/template-tags.php:150
+msgctxt "taxonomy terms separator"
+msgid ", "
+msgstr ", "

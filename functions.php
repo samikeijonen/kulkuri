@@ -74,12 +74,6 @@ function kulkuri_setup() {
 		'social'      => __( 'Social Menu', 'kulkuri' )
 	) );
 
-	/* Setup the WordPress core custom background feature. */
-	add_theme_support( 'custom-background', apply_filters( 'kulkuri_custom_background_args', array(
-		'default-color' => 'ffffff',
-		'default-image' => '',
-	) ) );
-
 	/* Enable support for HTML5 markup. */
 	add_theme_support( 'html5', array(
 		'comment-list',
@@ -251,6 +245,24 @@ function kulkuri_subsidiary_classes( $classes ) {
 }
 add_filter( 'body_class', 'kulkuri_subsidiary_classes' );
 
+/**
+ * Add boxed-layout class.
+ *
+ * @since     1.0.0
+ */
+function kulkuri_boxed_layout_classes( $classes ) {
+    
+	if ( get_theme_mod( 'layout_boxed' ) ) {
+		
+		$classes[] = 'boxed-layout';
+		
+    }
+    
+    return $classes;
+	
+}
+add_filter( 'body_class', 'kulkuri_boxed_layout_classes' );
+
 /*
  * Use link for all post thumbnail.
  *
@@ -266,16 +278,23 @@ function kulkuri_post_image_html( $html, $post_id, $post_image_id ) {
 add_filter( 'post_thumbnail_html', 'kulkuri_post_image_html', 10, 3 );
 
 /*
- * Enable infinite scroll on front page.
+ * Add Footer info.
  *
  * @since  1.0.0
+ * @return html.
  */
-function kulkuri_custom_is_support() {
-	$supported = current_theme_supports( 'infinite-scroll' ) && ( is_home() || is_archive() || is_search() || is_front_page() );
- 
-	return $supported;
+function kulkuri_footer_info() { ?>
+
+	<footer id="colophon" class="site-footer" role="contentinfo">
+		<div class="site-info">
+			<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'kulkuri' ) ); ?>" title="<?php esc_attr_e( 'A Semantic Personal Publishing Platform', 'kulkuri' ); ?>"><?php printf( __( 'Proudly powered by %s', 'kulkuri' ), 'WordPress' ); ?></a>
+			<span class="sep"> <?php esc_attr_e( '&middot;', 'kulkuri' ); ?></span>
+			<?php printf( __( 'Theme: %1$s by %2$s.', 'kulkuri' ), 'kulkuri', '<a href="https://foxnet-themes.fi" rel="designer">Foxnet Themes</a>' ); ?>
+		</div><!-- .site-info -->
+	</footer><!-- #colophon --> <?php
+	
 }
-//add_filter( 'infinite_scroll_archive_supported', 'kulkuri_custom_is_support' );
+add_action( 'wp_footer', 'kulkuri_footer_info' );
 
 /**
  * Callback function for adding editor styles. Use along with the add_editor_style() function.
@@ -324,9 +343,42 @@ function kulkuri_callout_output() {
 }
 
 /**
+ * Get all posts id from wanted menu.
+ *
+ * @author  Tom McFarlin, http://tommcfarlin.com/
+ * @link    http://tommcfarlin.com/tabbed-navigation-in-wordpress
+ * @license http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+ * @since   1.0.0
+*/
+function kulkuri_get_posts_for_menu( $menu_name ) {
+
+	/* Read all of the navigation menu locations */
+	$locations = get_nav_menu_locations();
+
+	/* Grab the specific menu identified by the specified menu name. */
+	$menu = wp_get_nav_menu_object( $locations[ $menu_name ] );
+	$menu_items = wp_get_nav_menu_items( $menu->term_id );
+
+	/* Grab all of the post IDs that are represented in this menu. */
+	$post_ids = array();
+	
+	foreach( $menu_items as $post ) {
+		$post_ids[] = $post->object_id;
+	}
+
+	return $post_ids;
+
+}
+
+/**
  * Implement the Custom Header feature.
  */
 require get_template_directory() . '/inc/custom-header.php';
+
+/**
+ * Implement the Custom Background feature.
+ */
+require get_template_directory() . '/inc/custom-background.php';
 
 /**
  * Custom template tags for this theme.
@@ -342,3 +394,8 @@ require get_template_directory() . '/inc/extras.php';
  * Customizer additions.
  */
 require get_template_directory() . '/inc/customizer.php';
+
+/**
+ * Custom Walker Menu.
+ */
+require get_template_directory() . '/inc/menu-walker.php';

@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Kulkuri 1.0\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/theme/style\n"
-"POT-Creation-Date: 2014-05-29 18:25:48+00:00\n"
-"PO-Revision-Date: 2014-05-29 21:27+0200\n"
+"POT-Creation-Date: 2014-06-01 17:27:17+00:00\n"
+"PO-Revision-Date: 2014-06-01 20:27+0200\n"
 "Last-Translator: Sami Keijonen <sami.keijonen@foxnet.fi>\n"
 "Language-Team: Foxnet Themes <sami.keijonen@foxnet.fi>\n"
 "Language: fi\n"
@@ -81,37 +81,13 @@ msgstr "Emme valitettavasti löytäneet etsimääsi. Ehkä hakutoiminnosta on ap
 msgid "Pages:"
 msgstr "Sivut:"
 
-#: content-single.php:27 content.php:25 pages/front-page.php:109
+#: content-single.php:27 content.php:25 pages/front-page.php:121
 msgid "Posted in %s"
 msgstr "Artikkeli kategoriassa %s"
 
-#: content-single.php:28 content.php:26 pages/front-page.php:110
+#: content-single.php:28 content.php:26 pages/front-page.php:122
 msgid "Tagged %s"
 msgstr "Avainsanat %s"
-
-#: functions - Copy.php:72
-msgid "Front page Menu"
-msgstr "Etusivun valikko"
-
-#: functions - Copy.php:73
-msgid "Other pages Menu"
-msgstr "Muiden sivujen valikko"
-
-#: functions - Copy.php:74 functions.php:74
-msgid "Social Menu"
-msgstr "Somevalikko"
-
-#: functions - Copy.php:131 functions.php:131
-msgid "A sidebar located in the footer of the site."
-msgstr "Sivupalkki sijaitsee alapalkissa."
-
-#: functions - Copy.php:163 Copy.php:176 functions.php:163 functions.php:176
-msgid "Menu"
-msgstr "Valikko"
-
-#: functions - Copy.php:224 functions.php:224
-msgid "Read more"
-msgstr "Lue lisää"
 
 #: functions.php:72
 msgid "Front Page Menu"
@@ -120,6 +96,42 @@ msgstr "Etusivun valikko"
 #: functions.php:73
 msgid "Not Front Page Menu"
 msgstr "Muiden sivujen valikko"
+
+#: functions.php:74
+msgid "Social Menu"
+msgstr "Somevalikko"
+
+#: functions.php:125
+msgid "A sidebar located in the footer of the site."
+msgstr "Sivupalkki sijaitsee alapalkissa."
+
+#: functions.php:157 functions.php:170
+msgid "Menu"
+msgstr "Valikko"
+
+#: functions.php:218
+msgid "Read more"
+msgstr "Lue lisää"
+
+#: functions.php:290
+msgid "http://wordpress.org/"
+msgstr "http://wordpress.org/"
+
+#: functions.php:290
+msgid "A Semantic Personal Publishing Platform"
+msgstr "Semanttinen, henkilökohtainen julkaisualusta"
+
+#: functions.php:290
+msgid "Proudly powered by %s"
+msgstr "Voimanlähteenä %s"
+
+#: functions.php:291
+msgid "&middot;"
+msgstr "&middot;"
+
+#: functions.php:292
+msgid "Theme: %1$s by %2$s."
+msgstr "Teema: %1$s tekijä %2$s."
 
 #: header.php:24
 msgid "Skip to content"
@@ -141,28 +153,19 @@ msgstr "Callout URL-linkki"
 msgid "Callout URL text"
 msgstr "Callout URL-linkin teksti"
 
-#. Translators: %s stands for number. For example Select page 1.
 #: inc/customizer.php:115
-msgid "Select page %s"
-msgstr "Valitse sivu %s"
-
-#: inc/customizer.php:137
 msgid "Background color %s"
 msgstr "Taustaväri %s"
 
-#: inc/customizer.php:159
+#: inc/customizer.php:137
 msgid "Background image %s"
 msgstr "Taustakuva %s"
 
-#: inc/customizer.php:184
+#: inc/customizer.php:162
 msgid "Show latest posts on front page"
 msgstr "Näytä viimeisimmät artikkelit etusivulla"
 
-#: inc/customizer.php:208
-msgid "Show random testimonials on front page"
-msgstr "Näytä satunnaiset suositukset etusivulla"
-
-#: inc/customizer.php:233
+#: inc/customizer.php:186
 msgid "Upload custom logo."
 msgstr "Lataa logo."
 
@@ -229,7 +232,7 @@ msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
 msgstr[0] "Yksi kommentti: &ldquo;%2$s&rdquo;"
 msgstr[1] "%1$s kommenttia: &ldquo;%2$s&rdquo;"
 
-#: functions - Copy.php:130 functions.php:130
+#: functions.php:124
 msgctxt "sidebar"
 msgid "Subsidiary"
 msgstr "Alapalkin vimpainalue"

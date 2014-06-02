@@ -97,28 +97,6 @@ function kulkuri_customize_register_settings( $wp_customize ) {
 	$k = 1;
 	
 	while( $k < absint( apply_filters( 'kulkuri_how_many_pages', 7 ) ) ) {
-	
-		/* Add the 'front_page_*' setting. */
-		$wp_customize->add_setting(
-			'front_page_' . $k,
-			array(
-				'default'           => 0,
-				'sanitize_callback' => 'absint'
-			)
-		);
-	
-		/* Add front page control. */
-		$wp_customize->add_control(
-			'front-page-control-' . $k,
-				array(
-					/* Translators: %s stands for number. For example Select page 1. */
-					'label'    => sprintf( esc_html__( 'Select page %s', 'kulkuri' ), $k ),
-					'section'  => 'theme',
-					'settings' => 'front_page_' . $k,
-					'type'     => 'dropdown-pages',
-					'priority' => $k*10
-				) 
-			);
 			
 		/* Add the 'background_color' setting. */
 		$wp_customize->add_setting(
@@ -188,31 +166,6 @@ function kulkuri_customize_register_settings( $wp_customize ) {
 			'type'     => 'checkbox'
 		)
 	);
-	
-	/* Show option for testimonial if post type exist. */
-	if ( post_type_exists( 'jetpack-testimonial' ) || post_type_exists( 'testimonial' ) ) {
-		
-		/* Add the show latest testimonials setting. */
-		$wp_customize->add_setting(
-			'show_latest_testimonials',
-			array(
-				'default'           => '',
-				'sanitize_callback' => 'kulkuri_sanitize_checkbox'
-			)
-		);
-	
-		/* Add the show random testimonials control. */
-		$wp_customize->add_control(
-			'show-latest-testimonials',
-			array(
-				'label'    => esc_html__( 'Show random testimonials on front page', 'kulkuri' ),
-				'section'  => 'theme',
-				'settings' => 'show_latest_testimonials',
-				'priority' => 170,
-				'type'     => 'checkbox'
-			)
-		);
-	}
 	
 	/* === Logo upload. === */
 	

@@ -12,15 +12,25 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 		
-			<?php $k = 1;
-	
-			while ( $k < apply_filters( 'kulkuri_how_many_pages', 7 ) ) : // Begins the loop through found posts from customize settings. 
-				
-				$kulkuri_page_content = absint( get_theme_mod( 'front_page_' . $k ) );
-	
-				if ( 0 != $kulkuri_page_content || !empty( $kulkuri_page_content ) ) : // Check if page is selected. ?>
-					
-					<?php
+			<?php
+			
+			$kulkuri_section_args = apply_filters( 'kulkuri_front_page_section_arguments', array(
+				'post_type'           => array( 'page' ),
+				'post__in'            => kulkuri_get_posts_for_menu( 'primary' ),
+				'post_status'         => 'publish',
+				'ignore_sticky_posts' => 1,
+				'orderby'             => 'post__in',
+				'order'               => 'asc'
+			) );
+			
+			$kulkuri_section_query = new WP_Query( $kulkuri_section_args );
+			
+			if ( $kulkuri_section_query->have_posts() ) :
+			
+				$k=1;
+
+				while ( $kulkuri_section_query->have_posts() ) : $kulkuri_section_query->the_post();
+		
 					/* Get background color. */
 					if ( get_theme_mod( 'background_color_' . $k ) ) :
 						$kulkuri_section_bg_color = 'background-color: ' . get_theme_mod( 'background_color_' . $k , '#ffffff' ) . ';';
@@ -36,8 +46,10 @@ get_header(); ?>
 					endif;
 					
 					/* Get page slug. */
-					$kulkuri_page = get_post( $kulkuri_page_content ); 
+					$kulkuri_page = get_post( get_the_ID() ); 
 					$kulkuri_page_slug = $kulkuri_page->post_name;
+					
+					// $kulkuri_page_slug = str_replace ( ' ', '-', strtolower( esc_attr( get_the_title() ) ) );
 					
 					do_action( 'kulkuri_front_page_before_section_' . $k ); // Add hook where we can filter new stuff. ?>
 					
@@ -47,17 +59,17 @@ get_header(); ?>
 							<div class="wrapper-inner">
 				
 								<header class="entry-header">
-									<h1 class="entry-title"><?php echo get_the_title( $kulkuri_page_content ); ?></h1>
+									<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 									
-									<?php if ( has_excerpt( $kulkuri_page_content ) ) { ?>
-									<div class="entry-summary">
-										<?php echo wpautop( get_post_field( 'post_excerpt', $kulkuri_page_content ) ); ?>
-									</div><!-- .entry-summary -->
-								<?php } ?>
+									<?php if ( has_excerpt() ) { ?>
+										<div class="entry-summary">
+											<?php the_excerpt(); ?>
+										</div><!-- .entry-summary -->
+									<?php } ?>
 								</header><!-- .entry-header -->
 								
 								<div class="entry-content">
-									<?php echo apply_filters( 'the_content', ( get_post_field( 'post_content', $kulkuri_page_content ) ) );	?>
+									<?php the_content(); ?>
 								</div><!-- .entry-content -->
 				
 							</div><!-- .wrapper-inner -->
@@ -67,11 +79,11 @@ get_header(); ?>
 					
 					<?php do_action( 'kulkuri_front_page_after_section_' . $k ); // Add hook where we can filter new stuff. ?>
 		
-				<?php endif; //End if page is selected. ?>
+					<?php $k++; // Add one before loop ends. ?>
+					
+				<?php endwhile; //End loop. ?>
 				
-			<?php $k++; // Add one before loop ends. 
-	
-			endwhile; // End found posts loop.
+			<?php endif; wp_reset_postdata(); // reset query.
 			
 			/* Add latest posts if user wants it. */
 			
@@ -88,13 +100,13 @@ get_header(); ?>
 
 					while ( $kulkuri_posts->have_posts() ) : $kulkuri_posts->the_post(); ?>
 			
-						<section id="<?php the_ID(); ?>" class="kulkuri-section kulkuri-section-blog kulkuri-section-<?php the_ID(); ?>">
+						<section id="<?php the_ID(); ?>" class="kulkuri-section kulkuri-section-blog kulkuri-section-blog-<?php the_ID(); ?>">
 							<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 			
 								<div class="wrapper-inner">
 				
 									<header class="entry-header">
-										<?php the_title( sprintf( '<h1 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>
+										<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 
 									<div class="entry-meta">
 										<?php kulkuri_posted_on(); ?>

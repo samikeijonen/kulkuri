@@ -656,6 +656,9 @@ a.more-link::after {
 	left: 0;
 	top: 0;
 }
+.boxed-layout #menu-primary-wrapper {
+	box-shadow: 0 4px 9px -8px rgba(0,0,0,0.5);
+}
 
 .nav-collapse ul {
 	margin: 0;
@@ -1152,7 +1155,7 @@ a.nav-toggle {
 	border-radius: 4px;
 	box-shadow: 0 0 1px #ccc;
 	margin-bottom: 40px;
-} 
+}
 
 
 /*--------------------------------------------------------------
@@ -1326,7 +1329,8 @@ video {
 	padding-top: 0;
 }
 #colophon {
-	padding-bottom: 40px;
+	padding: 40px 0;
+	text-align: center;
 }
 
 /* === 13.3 Media queries === */
@@ -1546,6 +1550,29 @@ video {
 
 	#site-title {
 		font-size: 3.5em;
+	}
+
+}
+
+/* === 13.6 Boxed layout. === */
+
+.boxed-layout .site {
+	padding: 0 4%;
+}
+.boxed-layout #menu-primary-wrapper {
+	left: 4%;
+	width: 92%;
+}
+
+@media screen and (min-width: 1248px) {
+
+	.boxed-layout .site {
+		padding: 0 10%;
+	}
+	
+	.boxed-layout #menu-primary-wrapper {
+		left: 10%;
+		width: 80%;
 	}
 
 }

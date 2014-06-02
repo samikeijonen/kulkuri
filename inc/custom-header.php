@@ -35,7 +35,7 @@ function kulkuri_custom_header_setup() {
 		'admin-preview-callback' => 'kulkuri_admin_header_image',
 	) ) );
 }
-add_action( 'after_setup_theme', 'kulkuri_custom_header_setup' );
+add_action( 'after_setup_theme', 'kulkuri_custom_header_setup', 15 );
 
 if ( ! function_exists( 'kulkuri_header_style' ) ) :
 /**
@@ -95,19 +95,56 @@ if ( ! function_exists( 'kulkuri_admin_header_style' ) ) :
  * @see kulkuri_custom_header_setup().
  */
 function kulkuri_admin_header_style() {
-?>
+
+	/* Header image. */
+	$header_image = esc_url( get_header_image() );
+	
+	/* Header image height. */
+	$header_height = get_custom_header()->height;
+
+	?>
+	
 	<style type="text/css">
 		.appearance_page_custom-header #headimg {
+			background: url(<?php echo $header_image ?>);
+			background-size: cover;
 			border: none;
+			font-size: 1.5em;
+			min-height: <?php echo $header_height; ?>px;
+			padding-top: 100px;
+			text-align: center;
 		}
+		
+		@media screen and (min-width: 800px) {
+
+			.appearance_page_custom-header #headimg h1 {
+				font-size: 2.5em;
+			}
+
+		}
+		
+		@media screen and (min-width: 1248px) {
+
+			.appearance_page_custom-header #headimg h1 {
+				font-size: 3em;
+			}
+
+		}
+		
 		#headimg h1,
 		#desc {
 		}
 		#headimg h1 {
+			text-shadow: 2px 2px 8px rgba(0, 0, 0, .8);
+			text-transform: uppercase;
 		}
 		#headimg h1 a {
+			text-decoration: none;
 		}
 		#desc {
+			font-size: 1.25em;
+			text-shadow: 2px 2px 5px rgba(0, 0, 0, .8);
+			text-transform: none;
 		}
 		#headimg img {
 		}
@@ -128,9 +165,6 @@ function kulkuri_admin_header_image() {
 	<div id="headimg">
 		<h1 class="displaying-header-text"><a id="name"<?php echo $style; ?> onclick="return false;" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a></h1>
 		<div class="displaying-header-text" id="desc"<?php echo $style; ?>><?php bloginfo( 'description' ); ?></div>
-		<?php if ( get_header_image() ) : ?>
-		<img src="<?php header_image(); ?>" alt="">
-		<?php endif; ?>
 	</div>
 <?php
 }

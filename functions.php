@@ -195,6 +195,23 @@ function kulkuri_scripts() {
 add_action( 'wp_enqueue_scripts', 'kulkuri_scripts' );
 
 /**
+ * Filter menu href attributes for page scrolling in primary menu.
+ *
+ * @since 1.0.0
+ * @return array $atts
+ */
+function kulkuri_nav_menu_link_attributes( $atts, $item, $args ) {
+	
+	if( 'post_type' == $item->type && 'page' == $item->object && 'primary' == $args->theme_location ) {
+		$kulkuri_page_slug = get_post( $item->object_id );
+		$atts['href'] = '#' . $kulkuri_page_slug->post_name;
+	}
+
+	return $atts;
+}
+add_filter( 'nav_menu_link_attributes', 'kulkuri_nav_menu_link_attributes', 100, 3 );
+
+/**
  * Add data-scroll to primary menu anchor so that scroll is working.
  *
  * @since 1.0.0
@@ -207,18 +224,6 @@ function kulkuri_menu_data_scroll( $menu, $args ) {
 	return $menu;
 }
 add_filter( 'wp_nav_menu_items','kulkuri_menu_data_scroll', 10, 2 );
-
-/**
- * Change [...] to ... Read more.
- *
- * @since 1.0.0
- */
-function kulkuri_excerpt_more() {
-
-	return '... <p><span class="kulkuri-read-more"><a class="more-link" href="' . esc_url( get_permalink() ) . '" title="' . the_title_attribute('echo=0') . '">' . __( 'Read more', 'kulkuri' ) . '</a></span></p>';
-
-}
-add_filter( 'excerpt_more', 'kulkuri_excerpt_more' );
 
 /**
  * Counts widgets number in subsidiary sidebar and ads css class (.sidebar-subsidiary-$number) to body_class.
@@ -399,3 +404,10 @@ require get_template_directory() . '/inc/customizer.php';
  * Custom Walker Menu.
  */
 require get_template_directory() . '/inc/menu-walker.php';
+
+/**
+ * Theme updater.
+ */
+if ( is_admin() && !kulkuri_is_wpcom() ) {
+	require get_template_directory() . '/admin/functions-admin.php';
+}

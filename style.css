@@ -516,7 +516,7 @@ input[type="url"],
 input[type="password"],
 input[type="search"],
 textarea {
-	border: 1px solid #ddd;
+	border: 4px solid #e4f1df;
 }
 input[type="text"]:focus,
 input[type="email"]:focus,
@@ -524,8 +524,7 @@ input[type="url"]:focus,
 input[type="password"]:focus,
 input[type="search"]:focus,
 textarea:focus {
-	border: 1px solid #7cb354;
-	color: #111;
+	border: 4px solid #7cb354;
 }
 textarea {
 	overflow: auto; /* Removes default vertical scrollbar in IE6/7/8/9 */
@@ -578,8 +577,7 @@ input[type="url"],
 input[type="week"],
 textarea,
 select {
-	box-shadow: 0 0 1px #ccc;
-	border-radius: 2px;
+	border: 4px solid #e4f1df;
 	display: block;
 	padding: 0.75em;
 }
@@ -601,7 +599,7 @@ select {
 }
 textarea {
 	min-height: 160px;
-	min-height: 10rem;
+	min-height: 16rem;
 }
 
 /* Form fields, general styles */

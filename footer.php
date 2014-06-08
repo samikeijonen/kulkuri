@@ -13,7 +13,7 @@
 	
 	<?php get_sidebar( 'subsidiary' ); // Loads the sidebar-subsidiary.php template. ?>
 
-</div><!-- #page -->
+</div><!-- #home -->
 
 <?php wp_footer(); ?>
 

@@ -96,7 +96,7 @@ function kulkuri_customize_register_settings( $wp_customize ) {
 	/* Loop same setting couple of times. */
 	$k = 1;
 	
-	while( $k < absint( apply_filters( 'kulkuri_how_many_pages', 7 ) ) ) {
+	while( $k < absint( apply_filters( 'kulkuri_how_many_pages', 8 ) ) ) {
 			
 		/* Add the 'background_color' setting. */
 		$wp_customize->add_setting(
@@ -131,7 +131,7 @@ function kulkuri_customize_register_settings( $wp_customize ) {
 	
 		/* Add custom logo control. */
 		$wp_customize->add_control(
-			new KULKURI_Customize_Image_Control(
+			new WP_Customize_Color_Control(
 				$wp_customize, 'background-image-control-' . $k,
 					array(
 						'label'    => sprintf( esc_html__( 'Background image %s', 'kulkuri' ), $k ),
@@ -231,42 +231,3 @@ function kulkuri_sanitize_checkbox( $input ) {
 	}
 
 }
-
-if ( class_exists( 'WP_Customize_Image_Control' ) && ! class_exists( 'KULKURI_Customize_Image_Control' ) ) :
-/**
- * Class KULKURI_Customize_Image_Control
- *
- * Extend WP_Customize_Image_Control allowing access to uploads made within the same context.
- *
- * @since 1.0.0.
- */
-class KULKURI_Customize_Image_Control extends WP_Customize_Image_Control {
-	/**
-	 * Override the stock tab_uploaded function.
-	 *
-	 * @since  1.0.0.
-	 *
-	 * @return void
-	 */
-	public function tab_uploaded() {
-		$images = get_posts( array(
-			'post_type'  => 'attachment',
-			'meta_key'   => '_wp_attachment_context',
-			'meta_value' => $this->context,
-			'orderby'    => 'none',
-			'nopaging'   => true,
-		) );
-
-		?><div class="uploaded-target"></div><?php
-
-		if ( empty( $images ) ) {
-			return;
-		}
-
-		foreach ( (array) $images as $image ) {
-			$thumbnail_url = wp_get_attachment_image_src( $image->ID, 'medium' );
-			$this->print_tab_image( esc_url_raw( $image->guid ), esc_url_raw( $thumbnail_url[0] ) );
-		}
-	}
-}
-endif;

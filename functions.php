@@ -67,7 +67,7 @@ function kulkuri_setup() {
 	 */
 	add_theme_support( 'post-thumbnails' );
 
-	/* This theme uses wp_nav_menu() in one location. */
+	/* This theme uses wp_nav_menu() in 3 locations. */
 	register_nav_menus( array(
 		'primary'     => __( 'Front Page Menu', 'kulkuri' ),
 		'not-primary' => __( 'Not Front Page Menu', 'kulkuri' ),
@@ -151,7 +151,6 @@ function kulkuri_scripts() {
 	/* Enqueue responsive navigation settings for other than front page. */
 	if( ! is_page_template( 'pages/front-page.php' ) ) {
 		wp_enqueue_script( 'kulkuri-navigation-settings', trailingslashit( get_template_directory_uri() ) . 'js/fixed-nav/responsive-nav-settings' . KULKURI_SUFFIX . '.js', array( 'kulkuri-navigation' ), KULKURI_VERSION, true );
-		
 		
 		wp_localize_script( 'kulkuri-navigation-settings', 'kulkuri_script_vars_2', array(
 		'menu_2' => __( 'Menu', 'kulkuri' )
@@ -251,22 +250,26 @@ function kulkuri_subsidiary_classes( $classes ) {
 add_filter( 'body_class', 'kulkuri_subsidiary_classes' );
 
 /**
- * Add boxed-layout class.
+ * Add boxed-layout class and header image class.
  *
  * @since     1.0.0
  */
-function kulkuri_boxed_layout_classes( $classes ) {
+function kulkuri_extra_layout_classes( $classes ) {
     
+	/* Add 'boxed-layout' if boxed layout is chosen in theme customizer. */
 	if ( get_theme_mod( 'layout_boxed' ) ) {
-		
-		$classes[] = 'boxed-layout';
-		
+		$classes[] = 'boxed-layout';	
     }
+	
+	/* Add the '.custom-header-image' class if the user is using a custom header image. */
+	if ( get_header_image() ) {
+		$classes[] = 'custom-header-image';
+	}
     
     return $classes;
 	
 }
-add_filter( 'body_class', 'kulkuri_boxed_layout_classes' );
+add_filter( 'body_class', 'kulkuri_extra_layout_classes' );
 
 /*
  * Use link for all post thumbnail.
@@ -399,11 +402,6 @@ require get_template_directory() . '/inc/extras.php';
  * Customizer additions.
  */
 require get_template_directory() . '/inc/customizer.php';
-
-/**
- * Custom Walker Menu.
- */
-require get_template_directory() . '/inc/menu-walker.php';
 
 /**
  * Theme updater.

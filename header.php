@@ -24,30 +24,47 @@
 	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'kulkuri' ); ?></a>
 	
 	<?php get_template_part( 'menu', 'primary' ); // Loads the menu-primary.php template. ?>
+	
+	<?php
+	
+	/* When to show header at all. */
+	$kulkuri_show_masthead = apply_filters( 'kulkuri_show_masthead', true );
+	
+	if( $kulkuri_show_masthead ) : // Check do we show header.
+	
+	?>
 
-	<header id="masthead" class="site-header" role="banner">
-		<?php if ( display_header_text() ) : // If user chooses to display header text. ?>
-			<div class="site-branding">
+		<header id="masthead" class="site-header" role="banner">
+		
+			<?php if ( display_header_text() ) : // If user chooses to display header text. ?>
 			
-			<?php if ( get_theme_mod( 'logo_upload') ) { // Use logo if is set. Else use bloginfo name. ?>	
-				<h1 id="site-title">
-					<a href="<?php echo esc_url( home_url() ); ?>" rel="home">
-						<img class="kulkuri-logo logo" src="<?php echo esc_url( get_theme_mod( 'logo_upload' ) ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>" />
-					</a>
-				</h1>
-				<?php } else { ?>
-				<h1 id="site-title" class="site-title logo"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<?php } ?>
+				<div class="site-branding">
+			
+				<?php if ( get_theme_mod( 'logo_upload') ) { // Use logo if is set. Else use bloginfo name. ?>	
+					<h1 id="site-title">
+						<a href="<?php echo esc_url( home_url() ); ?>" rel="home">
+							<img class="kulkuri-logo logo" src="<?php echo esc_url( get_theme_mod( 'logo_upload' ) ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>" />
+						</a>
+					</h1>
+					<?php } else { ?>
+					<h1 id="site-title" class="site-title logo"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+					<?php } ?>
 				
-				<h2 id="site-description" class="site-description"><?php bloginfo( 'description' ); ?></h2>
+					<h2 id="site-description" class="site-description"><?php bloginfo( 'description' ); ?></h2>
 				
-				<?php kulkuri_callout_output(); // Callout text and link on front page template.
+					<?php kulkuri_callout_output(); // Callout text and link on front page template.
 				
-				get_template_part( 'menu', 'social' ); // Loads the menu-social.php template. ?>
+					do_action( 'kulkuri_after_callout_output' ); // You can add stuff in here.
 				
-			</div>
-		<?php endif; // End check for header text. ?>
-	</header><!-- #masthead -->
+					get_template_part( 'menu', 'social' ); // Loads the menu-social.php template. ?>
+				
+				</div>
+			
+			<?php endif; // End check for header text. ?>
+		
+		</header><!-- #masthead -->
+		
+	<?php endif; // End check for header. ?>
 
 	<div id="content" class="site-content">
 		<div class="wrap">

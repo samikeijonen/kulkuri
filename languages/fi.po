@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Kulkuri 1.0\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/theme/style\n"
-"POT-Creation-Date: 2014-06-03 16:20:44+00:00\n"
-"PO-Revision-Date: 2014-06-03 19:22+0200\n"
+"POT-Creation-Date: 2014-06-06 15:53:04+00:00\n"
+"PO-Revision-Date: 2014-06-06 18:53+0200\n"
 "Last-Translator: Sami Keijonen <sami.keijonen@foxnet.fi>\n"
 "Language-Team: Foxnet Themes <sami.keijonen@foxnet.fi>\n"
 "Language: fi\n"
@@ -190,27 +190,23 @@ msgstr "Sivupalkki sijaitsee alapalkissa."
 msgid "Menu"
 msgstr "Valikko"
 
-#: functions.php:218
-msgid "Read more"
-msgstr "Lue lisää"
-
-#: functions.php:290
+#: functions.php:299
 msgid "http://wordpress.org/"
 msgstr "http://wordpress.org/"
 
-#: functions.php:290
+#: functions.php:299
 msgid "A Semantic Personal Publishing Platform"
 msgstr "Semanttinen, henkilökohtainen julkaisualusta"
 
-#: functions.php:290
+#: functions.php:299
 msgid "Proudly powered by %s"
 msgstr "Voimanlähteenä %s"
 
-#: functions.php:291
+#: functions.php:300
 msgid "&middot;"
 msgstr "&middot;"
 
-#: functions.php:292
+#: functions.php:301
 msgid "Theme: %1$s by %2$s."
 msgstr "Teema: %1$s tekijä %2$s."
 
@@ -250,7 +246,7 @@ msgstr "Näytä viimeisimmät artikkelit etusivulla"
 msgid "Upload custom logo."
 msgstr "Lataa logo."
 
-#: inc/extras.php:63
+#: inc/extras.php:51
 msgid "Page %s"
 msgstr "Sivu %s"
 
@@ -329,7 +325,7 @@ msgid "%title <span class=\"screen-reader-text meta-nav\">&rarr;</span>"
 msgstr "%title <span class=\"screen-reader-text meta-nav\">&rarr;</span>"
 
 #. Translators: Separates tags, categories, etc. when displaying a post.
-#: inc/template-tags.php:150
+#: inc/template-tags.php:109
 msgctxt "taxonomy terms separator"
 msgid ", "
 msgstr ", "

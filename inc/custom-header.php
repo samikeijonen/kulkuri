@@ -131,22 +131,21 @@ function kulkuri_admin_header_style() {
 
 		}
 		
-		#headimg h1,
-		#desc {
-		}
 		#headimg h1 {
-			text-shadow: 2px 2px 8px rgba(0, 0, 0, .8);
 			text-transform: uppercase;
+		}
+		#headimg.custom-header-image h1 {
+			text-shadow: 2px 2px 8px rgba(0, 0, 0, .8);
 		}
 		#headimg h1 a {
 			text-decoration: none;
 		}
 		#desc {
 			font-size: 1.25em;
-			text-shadow: 2px 2px 5px rgba(0, 0, 0, .8);
 			text-transform: none;
 		}
-		#headimg img {
+		.custom-header-image #desc {
+			text-shadow: 2px 2px 5px rgba(0, 0, 0, .8);
 		}
 	</style>
 <?php
@@ -161,8 +160,12 @@ if ( ! function_exists( 'kulkuri_admin_header_image' ) ) :
  */
 function kulkuri_admin_header_image() {
 	$style = sprintf( ' style="color:#%s;"', get_header_textcolor() );
+	
+	/* Header image. */
+	$header_image = esc_url( get_header_image() );
+	
 ?>
-	<div id="headimg">
+	<div id="headimg" class="headimg<?php if( $header_image ) echo ' custom-header-image'; ?>">
 		<h1 class="displaying-header-text"><a id="name"<?php echo $style; ?> onclick="return false;" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a></h1>
 		<div class="displaying-header-text" id="desc"<?php echo $style; ?>><?php bloginfo( 'description' ); ?></div>
 	</div>

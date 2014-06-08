@@ -9,7 +9,7 @@ License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: kulkuri
 Domain Path: /languages/
-Tags:
+Tags: green, white, light, one-column, fluid-layout, responsive-layout, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, threaded-comments, translation-ready
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -136,7 +136,7 @@ button,
 input,
 select,
 textarea {
-	color: #181819;
+	color: #626060;
 	font-family: "Open Sans", Helvetica, Arial, sans-serif;
 	font-size: 16px;
 	font-size: 1.6rem;
@@ -464,6 +464,7 @@ body #infinite-handle span {
 	line-height: 1;
 	padding: 1em 1.5em;
 	margin: 1em 0;
+	transition: all 0.25s ease-in-out;
 }
 body a.kulkuri-callout-button {
 	font-weight: 700;
@@ -517,6 +518,7 @@ input[type="password"],
 input[type="search"],
 textarea {
 	border: 4px solid #e4f1df;
+	transition: all 0.25s ease-in-out;
 }
 input[type="text"]:focus,
 input[type="email"]:focus,
@@ -618,6 +620,7 @@ textarea:focus {
 a {
 	color: #89c264;
 	text-decoration: none;
+	transition: all 0.25s ease-in-out;
 }
 a:visited {
 	color: #89c264;
@@ -873,6 +876,8 @@ a.nav-toggle {
 /* Social icons. */
 #menu-social li a::before {
 	color: #fff;
+}
+.custom-header-image #menu-social li a::before {
 	text-shadow: 2px 2px 5px rgba(0, 0, 0, .8)
 }
 #menu-social li a[href*="codepen.io"]::before,
@@ -1106,9 +1111,8 @@ a.nav-toggle {
 .sticky {
 }
 .hentry {
-	border-bottom: 1px dashed #ddd;
 	padding: 0 0 40px;
-	margin: 0 0 40px;
+	margin: 80px 0;
 }
 .blog .hentry {
 	padding: 7.5% 0 8.5%;
@@ -1299,6 +1303,7 @@ video {
 	.blog .entry-content,
 	.archive .entry-content,
 	.single-post .entry-content,
+	.page-template-default .entry-content,
 	.page-template-pagesfront-page-php .kulkuri-section-blog .entry-content {
 		margin-left: auto;
 		margin-right: auto;
@@ -1510,20 +1515,27 @@ video {
 }
 
 #masthead {
-	box-shadow: inset 0 -10px 10px -10px rgba(0,0,0,0.5);
+	background: #f8f8f4;
 	padding-top: 70px;
 	text-align: center;
+}
+.custom-header-image #masthead {
+	box-shadow: inset 0 -10px 10px -10px rgba(0,0,0,0.5);
 }
 
 #site-title {
 	font-size: 1.5em;
-	text-shadow: 2px 2px 8px rgba(0, 0, 0, .8);
 	text-transform: uppercase;
+}
+.custom-header-image #site-title {
+	text-shadow: 2px 2px 8px rgba(0, 0, 0, .8);
 }
 #site-description {
 	font-size: 1.25em;
-	text-shadow: 2px 2px 5px rgba(0, 0, 0, .8);
 	text-transform: none;
+}
+.custom-header-image #site-description {
+	text-shadow: 2px 2px 5px rgba(0, 0, 0, .8);
 }
 
 /* Minimum width of 768 pixels. */
@@ -1560,6 +1572,9 @@ video {
 .boxed-layout #menu-primary-wrapper {
 	left: 4%;
 	width: 92%;
+}
+.boxed-layout #content {
+	background: #fff;
 }
 
 @media screen and (min-width: 1248px) {

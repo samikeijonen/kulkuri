@@ -12,7 +12,10 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 		
-			<?php
+		<?php
+			
+		/* Set Query only if we have active 'primary' menu. */
+		if( has_nav_menu( 'primary' ) ) :
 			
 			$kulkuri_section_args = apply_filters( 'kulkuri_front_page_section_arguments', array(
 				'post_type'           => array( 'page' ),
@@ -87,7 +90,9 @@ get_header(); ?>
 					
 				<?php endwhile; //End loop. ?>
 				
-			<?php endif; wp_reset_postdata(); // reset query.
+			<?php endif; wp_reset_postdata(); // reset query. ?>
+			
+		<?php endif; // has nav menu 'primary'.
 			
 			/* Add latest posts if user wants it. */
 			

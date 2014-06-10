@@ -23,7 +23,11 @@ get_header(); ?>
 				'order'               => 'asc'
 			) );
 			
-			$kulkuri_section_query = new WP_Query( $kulkuri_section_args );
+			/* Set transient (24h) for faster loading. Delete transient on hook 'wp_update_nav_menu' in functions.php file. */
+			if( false === ( $kulkuri_section_query = get_transient( 'kulkuri_section_query' ) ) ) {
+				$kulkuri_section_query = new WP_Query( $kulkuri_section_args );
+				set_transient( 'kulkuri_section_query', $kulkuri_section_query, 60*60*24 );
+			}
 			
 			if ( $kulkuri_section_query->have_posts() ) :
 			
@@ -93,8 +97,12 @@ get_header(); ?>
 					'post_type'           => 'post',
 					'posts_per_page'      => 3
 				) );
-			
-				$kulkuri_posts = new WP_Query( $kulkuri_post_args );
+				
+				/* Set transient (24h) for faster loading. Delete transient on hook 'save_post' in functions.php file. */
+				if( false === ( $kulkuri_posts = get_transient( 'kulkuri_posts' ) ) ) {
+					$kulkuri_posts = new WP_Query( $kulkuri_post_args );
+					set_transient( 'kulkuri_posts', $kulkuri_posts, 60*60*24 );
+				}
 			
 				if ( $kulkuri_posts->have_posts() ) :
 

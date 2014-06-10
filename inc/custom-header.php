@@ -76,7 +76,7 @@ function kulkuri_header_style() {
 	$background_arguments = esc_attr( apply_filters( 'kulkuri_header_bg_arguments', 'no-repeat scroll top' ) );
 	
 	/* Styles for header. */
-	$style = "#site-title a, #site-description, body #menu-social li a::before { color: #{$hex}; }";
+	$style = "#masthead, #site-title a, #site-description, body #menu-social li a::before { color: #{$hex}; }";
 		
 	if ( get_header_image() ) {
 		$style .= "@media screen and (min-width: {$min_width}px) { #masthead { background: url({$header_image}) {$background_arguments}; background-size: cover; min-height: {$header_height_smaller}px; } }";

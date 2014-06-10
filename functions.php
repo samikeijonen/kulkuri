@@ -379,6 +379,18 @@ function kulkuri_get_posts_for_menu( $menu_name ) {
 }
 
 /**
+ * Flush out the transients used in front page WP Queries.
+ *
+ * @since   1.0.0
+ */
+function kulkuri_transient_flusher() {
+	delete_transient( 'kulkuri_section_query' );
+	delete_transient( 'kulkuri_posts' );
+}
+add_action( 'wp_update_nav_menu', 'kulkuri_transient_flusher' );
+add_action( 'save_post', 'kulkuri_transient_flusher' );
+
+/**
  * Implement the Custom Header feature.
  */
 require get_template_directory() . '/inc/custom-header.php';

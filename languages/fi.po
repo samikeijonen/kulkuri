@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Kulkuri 1.0\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/theme/style\n"
-"POT-Creation-Date: 2014-06-06 15:53:04+00:00\n"
-"PO-Revision-Date: 2014-06-06 18:53+0200\n"
+"POT-Creation-Date: 2014-06-09 10:24:40+00:00\n"
+"PO-Revision-Date: 2014-06-09 13:25+0200\n"
 "Last-Translator: Sami Keijonen <sami.keijonen@foxnet.fi>\n"
 "Language-Team: Foxnet Themes <sami.keijonen@foxnet.fi>\n"
 "Language: fi\n"
@@ -26,15 +26,6 @@ msgid ""
 msgstr ""
 "Näyttää siltä, että mitään ei löytynyt tästä osoitteesta. Koita navigoida "
 "alla olevista linkeistä tai etsiä haluamaasi."
-
-#: 404.php:27
-msgid "Most Used Categories"
-msgstr "Käytetyimmät kategoriat"
-
-#. translators: %1$s: smiley
-#: 404.php:44
-msgid "Try looking in the monthly archives. %1$s"
-msgstr "Koita etsiä kuukausiarkistosta. %1$s"
 
 #: admin/EDD_SL_Theme_Updater.php:54
 msgid ""
@@ -158,15 +149,15 @@ msgid ""
 "searching can help."
 msgstr "Emme valitettavasti löytäneet etsimääsi. Ehkä hakutoiminnosta on apua."
 
-#: content-page.php:18 content-single.php:20
+#: content-page.php:19 content-single.php:21
 msgid "Pages:"
 msgstr "Sivut:"
 
-#: content-single.php:27 content.php:25 pages/front-page.php:121
+#: content-single.php:28 content.php:26 pages/front-page.php:121
 msgid "Posted in %s"
 msgstr "Artikkeli kategoriassa %s"
 
-#: content-single.php:28 content.php:26 pages/front-page.php:122
+#: content-single.php:29 content.php:27 pages/front-page.php:122
 msgid "Tagged %s"
 msgstr "Avainsanat %s"
 
@@ -186,27 +177,27 @@ msgstr "Somevalikko"
 msgid "A sidebar located in the footer of the site."
 msgstr "Sivupalkki sijaitsee alapalkissa."
 
-#: functions.php:157 functions.php:170
+#: functions.php:156 functions.php:169
 msgid "Menu"
 msgstr "Valikko"
 
-#: functions.php:299
+#: functions.php:298
 msgid "http://wordpress.org/"
 msgstr "http://wordpress.org/"
 
-#: functions.php:299
+#: functions.php:298
 msgid "A Semantic Personal Publishing Platform"
 msgstr "Semanttinen, henkilökohtainen julkaisualusta"
 
-#: functions.php:299
+#: functions.php:298
 msgid "Proudly powered by %s"
 msgstr "Voimanlähteenä %s"
 
-#: functions.php:300
+#: functions.php:299
 msgid "&middot;"
 msgstr "&middot;"
 
-#: functions.php:301
+#: functions.php:300
 msgid "Theme: %1$s by %2$s."
 msgstr "Teema: %1$s tekijä %2$s."
 

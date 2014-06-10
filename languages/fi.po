@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Kulkuri 1.0\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/theme/style\n"
-"POT-Creation-Date: 2014-06-09 10:24:40+00:00\n"
-"PO-Revision-Date: 2014-06-09 13:25+0200\n"
+"POT-Creation-Date: 2014-06-10 12:44:53+00:00\n"
+"PO-Revision-Date: 2014-06-10 15:45+0200\n"
 "Last-Translator: Sami Keijonen <sami.keijonen@foxnet.fi>\n"
 "Language-Team: Foxnet Themes <sami.keijonen@foxnet.fi>\n"
 "Language: fi\n"
@@ -153,11 +153,11 @@ msgstr "Emme valitettavasti löytäneet etsimääsi. Ehkä hakutoiminnosta on ap
 msgid "Pages:"
 msgstr "Sivut:"
 
-#: content-single.php:28 content.php:26 pages/front-page.php:121
+#: content-single.php:28 content.php:26 pages/front-page.php:134
 msgid "Posted in %s"
 msgstr "Artikkeli kategoriassa %s"
 
-#: content-single.php:29 content.php:27 pages/front-page.php:122
+#: content-single.php:29 content.php:27 pages/front-page.php:135
 msgid "Tagged %s"
 msgstr "Avainsanat %s"
 

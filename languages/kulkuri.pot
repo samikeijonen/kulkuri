@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Kulkuri 1.0\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/theme/style\n"
-"POT-Creation-Date: 2014-06-09 10:24:40+00:00\n"
+"POT-Creation-Date: 2014-06-10 12:44:53+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -136,11 +136,11 @@ msgstr ""
 msgid "Pages:"
 msgstr ""
 
-#: content-single.php:28 content.php:26 pages/front-page.php:121
+#: content-single.php:28 content.php:26 pages/front-page.php:134
 msgid "Posted in %s"
 msgstr ""
 
-#: content-single.php:29 content.php:27 pages/front-page.php:122
+#: content-single.php:29 content.php:27 pages/front-page.php:135
 msgid "Tagged %s"
 msgstr ""
 

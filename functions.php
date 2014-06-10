@@ -57,7 +57,7 @@ function kulkuri_setup() {
 	 */
 	load_theme_textdomain( 'kulkuri', get_template_directory() . '/languages' );
 
-	// Add default posts and comments RSS feed links to head.
+	/* Add default posts and comments RSS feed links to head. */
 	add_theme_support( 'automatic-feed-links' );
 
 	/*
@@ -93,7 +93,7 @@ function kulkuri_setup() {
 	/* Add Editor styles. */
 	add_editor_style( kulkuri_get_editor_styles() );
 	
-	/* Add post type support for pages. */
+	/* Add excerpt support for pages. */
 	add_post_type_support( 'page', 'excerpt' );
 	
 }
@@ -218,7 +218,7 @@ add_filter( 'nav_menu_link_attributes', 'kulkuri_nav_menu_link_attributes', 100,
  */
 function kulkuri_menu_data_scroll( $menu, $args ) {
 	if( 'primary' == $args->theme_location ) {
-		$menu = str_replace( 'href', 'data-scroll href', $menu );
+		$menu = str_replace( 'href=', 'data-scroll href=', $menu );
 	}
 	return $menu;
 }

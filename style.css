@@ -27,8 +27,10 @@ and Blueprint http://www.blueprintcss.org/
 ----------------------------------------------------------------
 1.0 - Reset
 2.0 - Typography
+	2.1 - Headers
 3.0 - Elements
-    3.1 - Genericons
+	3.1 - Blockquotes, paragraphs, code, lists, tables
+    3.2 - Genericons
 4.0 - Forms
 5.0 - Navigation
 	5.1 - Links
@@ -40,14 +42,24 @@ and Blueprint http://www.blueprintcss.org/
 10.0 - Content
 	 10.1 - Posts and pages
 	 10.2 - Asides
-	 10.3 - Comments
 11.0 - Infinite scroll
 12.0 - Media
 	 12.1 - Captions
 	 12.2 - Galleries
 13.0 - Layouts
+	 13.1 - Max-widths
+	 13.2 - Paddings
+	 13.3 - Subsidiary sidebar
+	 13.4 - Front page layout
+	 13.5 - Header
+	 13.6 - Boxed layout
 14.0 - Comments
 15.0 - Plugins CSS
+	 15.1 - Soliloquy CSS
+	 15.2 - Gravity forms CSS
+	 15.3 - Testimonials CSS
+	 15.4 - Our team CSS
+	 15.5 - Jetpack CSS
 --------------------------------------------------------------*/
 
 /*--------------------------------------------------------------
@@ -363,7 +375,7 @@ th {
 	text-align: right;
 }
 
-/* === 3.1 Genericons === */
+/* === 3.2 Genericons === */
 
 a[href^="mailto:"]::before,
 a[href^="tel:"]::before,
@@ -611,12 +623,13 @@ textarea:focus {
 	outline: 0;
 }
 
+
 /*--------------------------------------------------------------
 5.0 Navigation
 --------------------------------------------------------------*/
-/*--------------------------------------------------------------
-5.1 Links
---------------------------------------------------------------*/
+
+/* === 5.1 Links === */
+
 a {
 	color: #89c264;
 	text-decoration: none;
@@ -644,9 +657,7 @@ a.more-link::after {
 	color: #999;
 }
 
-/*--------------------------------------------------------------
-5.2 Menus
---------------------------------------------------------------*/
+/* === 5.2 Menus === */
 
 #menu-primary-wrapper {
 	background: #fff;
@@ -665,9 +676,11 @@ a.more-link::after {
 	margin: 0;
 	padding: 0;
 	list-style: none;
+	text-align: center;
 }
 .nav-collapse li a,
 a.nav-toggle {
+	text-align: center;
 	text-decoration: none;
 }
 
@@ -714,7 +727,7 @@ a.nav-toggle {
 		border-bottom: 1px solid #89c264;
 		color: #89c264;
 		display: block;
-		padding: .5em 1em .5em 4%;
+		padding: .5em 4%;
 		width: 100%;
 	}
 	a.nav-toggle {
@@ -1103,10 +1116,7 @@ a.nav-toggle {
 10.0 Content
 --------------------------------------------------------------*/
 
-
-/*--------------------------------------------------------------
-10.1 Posts and pages
---------------------------------------------------------------*/
+/* === 10.1 Posts and pages === */
 
 .sticky {
 }
@@ -1160,9 +1170,7 @@ a.nav-toggle {
 }
 
 
-/*--------------------------------------------------------------
-10.2 Asides
---------------------------------------------------------------*/
+/* === 10.2 Asides === */
 
 .blog .format-aside .entry-title,
 .archive .format-aside .entry-title {
@@ -1171,18 +1179,9 @@ a.nav-toggle {
 
 
 /*--------------------------------------------------------------
-10.3 Comments
---------------------------------------------------------------*/
-
-.comment-content a {
-	word-wrap: break-word;
-}
-.bypostauthor {
-}
-
-/*--------------------------------------------------------------
 11.0 Infinite scroll
 --------------------------------------------------------------*/
+
 /* Globally hidden elements when Infinite Scroll is supported and in use. */
 .infinite-scroll .paging-navigation, /* Older / Newer Posts Navigation (always hidden) */
 .infinite-scroll.neverending .site-footer { /* Theme Footer (when set to scrolling) */
@@ -1215,9 +1214,7 @@ video {
 }
 
 
-/*--------------------------------------------------------------
-12.1 Captions
---------------------------------------------------------------*/
+/* === 12.1 Captions === */
 
 .wp-caption {
 	margin-bottom: 1.5em;
@@ -1234,10 +1231,7 @@ video {
 	margin: 0.8075em 0;
 }
 
-
-/*--------------------------------------------------------------
-12.2 Galleries
---------------------------------------------------------------*/
+/* === 12.2 Galleries === */
 
 .gallery {
 	margin-bottom: 1.5em;
@@ -1281,7 +1275,7 @@ video {
 13.0 Layouts
 --------------------------------------------------------------*/
 
-/* === 13.1 Max-width. === */
+/* === 13.1 Max-widths === */
 
 #masthead .site-branding,
 .breadcrumb-trail .wrap,
@@ -1312,7 +1306,7 @@ video {
 
 }
 
-/* === 13.2 Paddings. === */
+/* === 13.2 Paddings === */
 
 #masthead,
 #content .wrap,
@@ -1336,44 +1330,7 @@ video {
 	text-align: center;
 }
 
-/* === 13.3 Media queries === */
-
-@media screen and (min-width: 800px) {
-
-	/* Two column layout. */
-	
-	.layout-2c-l .content-area,
-	.layout-default .content-area,
-	.layout-3c-l .content-area,
-	.layout-2c-r #sidebar-primary {
-		float: left;
-	}
-	
-	.layout-2c-l .content-area,
-	.layout-default .content-area,
-	.layout-2c-r .content-area {
-		width: 66%;
-	}
-
-	.layout-2c-l #sidebar-primary,
-	.layout-2c-r #sidebar-primary {
-		float: left;
-		padding-left: 3%;
-		width: 34%;
-	}
-	.layout-2c-r #sidebar-primary {
-		padding-left: 0;
-		padding-right: 3%;
-	}
-	
-	.layout-2c-r .content-area,
-	.layout-2c-r #sidebar-primary {
-		float: right;
-	}
-
-}
-
-/* === 13.4 Subsidiary sidebar. === */
+/* === 13.3 Subsidiary sidebar === */
 
 /* Minimum width of 608 pixels. */
 @media screen and (min-width: 608px) {
@@ -1489,7 +1446,7 @@ video {
 
 }
 
-/* === 13.5 Front page layout. === */
+/* === 13.4 Front page layout === */
 
 .kulkuri-section {
 	-webkit-background-size: cover;
@@ -1503,7 +1460,6 @@ video {
 /* Minimum width of 560 pixels. */
 @media screen and (min-width: 560px) {
 
-	
 
 }
 
@@ -1511,8 +1467,9 @@ video {
 @media screen and (min-width: 1056px) {
 
 
-
 }
+
+/* === 13.5 Header === */
 
 #masthead {
 	background: #f8f8f4;
@@ -1520,7 +1477,7 @@ video {
 	text-align: center;
 }
 .custom-header-image #masthead {
-	box-shadow: inset 0 -10px 10px -10px rgba(0,0,0,0.5);
+	box-shadow: inset 0 -6px 10px -10px rgba(0,0,0,0.5);
 }
 
 #site-title {
@@ -1564,7 +1521,7 @@ video {
 
 }
 
-/* === 13.6 Boxed layout. === */
+/* === 13.6 Boxed layout === */
 
 .boxed-layout .site {
 	padding: 0 4%;
@@ -1594,6 +1551,13 @@ video {
 /*--------------------------------------------------------------
 15.0 Comments
 --------------------------------------------------------------*/
+
+.comment-content a {
+	word-wrap: break-word;
+}
+
+.bypostauthor {
+}
 
 #respond {
 	margin-top: 30px;
@@ -1773,7 +1737,7 @@ body #gforms_confirmation_message {
 	clear: both;
 }
 
-/* === 15.4 Our theme CSS === */
+/* === 15.4 Our team CSS === */
 
 .team-members  {
 	text-align: center;
@@ -1806,4 +1770,3 @@ body .infinite-loader {
 	margin-bottom: 40px;
 	text-align: center;
 }
-

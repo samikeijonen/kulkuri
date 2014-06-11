@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Kulkuri 1.0\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/theme/style\n"
-"POT-Creation-Date: 2014-06-10 12:44:53+00:00\n"
+"POT-Creation-Date: 2014-06-11 07:59:47+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -35,65 +35,80 @@ msgid ""
 "href=\"%5$s\"%6$s>update now</a>."
 msgstr ""
 
-#: admin/functions-admin.php:70
+#: admin/functions-admin.php:77 admin/functions-admin.php:78
 msgid "Theme License"
 msgstr ""
 
-#: admin/functions-admin.php:84
+#: admin/functions-admin.php:97
+msgid "Enter your theme license key."
+msgstr ""
+
+#: admin/functions-admin.php:107
 msgid "Theme License Options"
 msgstr ""
 
-#: admin/functions-admin.php:93
+#: admin/functions-admin.php:117
 msgid "License Key"
 msgstr ""
 
-#: admin/functions-admin.php:97
-msgid "Enter your license key for receiving automatic upgrades"
-msgstr ""
-
-#: admin/functions-admin.php:103 admin/functions-admin.php:111
-msgid "Activate License"
-msgstr ""
-
-#: admin/functions-admin.php:108
-msgid "Deactivate License"
-msgstr ""
-
-#: admin/functions-admin.php:118
+#: admin/functions-admin.php:132
 msgid "License status"
 msgstr ""
 
-#: admin/functions-admin.php:266
-#. translators: There is a space after %s:
-msgid "Expires %s: "
+#: admin/functions-admin.php:143
+msgid "License Action"
 msgstr ""
 
-#: admin/functions-admin.php:269
-msgid "Active"
+#: admin/functions-admin.php:149
+msgid "Deactivate License"
 msgstr ""
 
-#: admin/functions-admin.php:271
-msgid "Expired"
+#: admin/functions-admin.php:151
+msgid "Activate License"
 msgstr ""
 
-#: admin/functions-admin.php:273
-msgid "License keys do not match"
+#: admin/functions-admin.php:324
+msgid "&#8734;"
 msgstr ""
 
-#: admin/functions-admin.php:275
-msgid "Inactive"
+#: admin/functions-admin.php:328
+msgid "License key is active."
 msgstr ""
 
-#: admin/functions-admin.php:277
-msgid "Disabled"
+#: admin/functions-admin.php:330
+msgid "Expires %s."
 msgstr ""
 
-#: admin/functions-admin.php:279
-msgid "Site is inactive"
+#: admin/functions-admin.php:331
+msgid "Activated sites %1$s / %2$s."
 msgstr ""
 
-#: admin/functions-admin.php:281
-msgid "Unknown"
+#: admin/functions-admin.php:334
+msgid "License key has expired."
+msgstr ""
+
+#: admin/functions-admin.php:336
+msgid "Expired %s."
+msgstr ""
+
+#: admin/functions-admin.php:339
+msgid "License keys do not match."
+msgstr ""
+
+#: admin/functions-admin.php:341
+msgid "License is inactive."
+msgstr ""
+
+#: admin/functions-admin.php:343
+msgid "License key is disabled."
+msgstr ""
+
+#: admin/functions-admin.php:345
+msgid "Site is inactive."
+msgstr ""
+
+#: admin/functions-admin.php:347
+msgid "License status is unknown."
 msgstr ""
 
 #: comments.php:35 comments.php:52

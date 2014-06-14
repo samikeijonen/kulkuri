@@ -25,7 +25,7 @@
 function kulkuri_updater_settings( $setting ) {
 
 	/* URL of site running EDD. */
-	$data['remote_api_url'] = 'http://foxnet-themes.fi';
+	$data['remote_api_url'] = 'http://localhost/foxnet-themes-shop';
 
 	/* The name of this theme. */
 	$data['theme_name'] = 'Kulkuri';
@@ -118,24 +118,11 @@ function kulkuri_license_page() {
 						</th>
 						<td>
 							<input id="kulkuri_license_key" name="kulkuri_license_key" type="text" class="regular-text" value="<?php esc_attr_e( $license ); ?>" />
-							<?php if( ! $license ) { ?>
-								<p class="description">
-									<?php echo $message; ?>
-								</p>
-							<?php } ?>
+							<p class="description">
+								<?php echo $message; ?>
+							</p>
 						</td>
 					</tr>
-					
-					<?php if( $license && 'valid' == $status ) { ?>
-						<tr valign="top">
-							<th scope="row" valign="top">
-								<?php _e( 'License status', 'kulkuri' ); ?>
-							</th>
-							<td>
-								<?php echo $message; ?>
-							</td>
-						</tr>
-					<?php } ?>
 
 					<?php if ( $license ) { ?>
 					<tr valign="top">
@@ -308,6 +295,12 @@ function kulkuri_check_license() {
 	}
 
 	$license_data = json_decode( wp_remote_retrieve_body( $response ) );
+	
+	/* If response doesn't include license data, return. */
+	if ( !isset( $license_data->license ) ) {
+		$message = __( 'License status is unknown.', 'kulkuri' );
+		return $message;
+	}
 
 	/* Get expire date. */
 	$expires = false;
@@ -325,10 +318,12 @@ function kulkuri_check_license() {
 	}
 
 	if ( $license_data->license == 'valid' ) {
-		$message = __( 'License key is active.', 'kulkuri' ) . ' ';
+		$message = __( 'License key is active', 'kulkuri' ) . ' ';
 		if ( $expires ) {
-			$message .= sprintf( __( 'Expires %s.', 'kulkuri' ), $expires ) . ' ';
-			$message .= sprintf( __( 'Activated sites %1$s / %2$s.', 'kulkuri' ), $site_count, $license_limit );
+			$message .= sprintf( __( 'and expires %s.', 'kulkuri' ), $expires ) . ' ';
+		}
+		if ( $site_count && $license_limit ) {
+			$message .= sprintf( _n( 'You have %1$s / %2$s site activated.', 'You have %1$s / %2$s sites activated.', $site_count, 'kulkuri' ), $site_count, $license_limit );
 		}
 	} else if ( $license_data->license == 'expired' ) {
 		$message = __( 'License key has expired.', 'kulkuri' ) . ' ';

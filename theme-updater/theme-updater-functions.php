@@ -192,7 +192,7 @@ function kulkuri_deactivate_license() {
 	// Data to send in our API request.
 	$api_params = array(
 		'edd_action' => 'deactivate_license',
-		'license' 	 => $license,
+		'license'    => $license,
 		'item_name'  => urlencode( kulkuri_updater_settings( 'theme_name' ) )
 	);
 

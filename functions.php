@@ -419,5 +419,5 @@ require get_template_directory() . '/inc/customizer.php';
  * Theme updater.
  */
 if ( is_admin() && !kulkuri_is_wpcom() ) {
-	require get_template_directory() . '/admin/functions-admin.php';
+	require get_template_directory() . '/theme-updater/theme-updater.php';
 }

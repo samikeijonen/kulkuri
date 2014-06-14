@@ -61,7 +61,47 @@ module.exports = function(grunt) {
 					type: 'wp-theme'               // Type of project (wp-plugin or wp-theme).
 				}
 			}
+		},
+		
+		// Clean up build directory
+		clean: {
+			main: ['build/<%= pkg.name %>']
+		},
+
+		// Copy the theme into the build directory
+		copy: {
+		main: {
+			src:  [
+			'**',
+			'!node_modules/**',
+			'!build/**',
+			'!.git/**',
+			'!Gruntfile.js',
+			'!package.json',
+			'!.gitignore',
+			'!.gitmodules',
+			'!.tx/**',
+			'!**/Gruntfile.js',
+			'!**/package.json',
+			'!**/*~'
+			],
+			dest: 'build/<%= pkg.name %>/'
 		}
+		},
+
+		// Compress build directory into <name>.zip and <name>-<version>.zip
+		compress: {
+		main: {
+			options: {
+			mode: 'zip',
+			archive: './build/<%= pkg.name %>_v<%= pkg.version %>.zip'
+			},
+			expand: true,
+			cwd: 'build/<%= pkg.name %>/',
+			src: ['**/*'],
+			dest: '<%= pkg.name %>/'
+		}
+		},
 
     });
 
@@ -73,5 +113,8 @@ module.exports = function(grunt) {
 
     // 4. Where we tell Grunt what to do when we type "grunt" into the terminal.
     grunt.registerTask( 'default', ['uglify', 'cssmin', 'makepot'] );
+	
+	// Build task(s).
+	grunt.registerTask( 'build', [ 'clean', 'copy', 'compress' ] );
 
 };

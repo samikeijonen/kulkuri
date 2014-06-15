@@ -6,15 +6,6 @@
  */
 
 /**
- * When using in your own project:
- *
- * 1. Find/replace "kulkuri" with your theme kulkuri
- * 2. Find/replace "kulkuri" with your theme kulkuri
- * 3. Update the variables in kulkuri_theme_info()
- * 4. Delete this doc block
- */
-
-/**
  * Returns settings required by the theme updater.
  *
  * since 1.0.0

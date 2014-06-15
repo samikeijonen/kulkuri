@@ -22,7 +22,7 @@ function kulkuri_updater_settings( $setting ) {
 	$data['theme_name'] = 'Kulkuri';
 
 	/* The current theme version we are running. */
-	$data['version'] = '1.0';
+	$data['version'] = KULKURI_VERSION; // From functions.php file.
 
 	/* The author's name. */
 	$data['author'] = 'Sami Keijonen';

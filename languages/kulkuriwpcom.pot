@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Kulkuri 1.0.1\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/theme/style\n"
-"POT-Creation-Date: 2014-06-15 10:22:48+00:00\n"
+"POT-Creation-Date: 2014-06-15 10:22:50+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -168,92 +168,6 @@ msgstr ""
 
 #: search.php:16
 msgid "Search Results for: %s"
-msgstr ""
-
-#: theme-updater/theme-updater-class.php:54
-msgid ""
-"Updating this theme will lose any customizations you have made. 'Cancel' to "
-"stop, 'OK' to update."
-msgstr ""
-
-#: theme-updater/theme-updater-class.php:59
-msgid ""
-"<strong>%1$s %2$s</strong> is available. <a href=\"%3$s\" "
-"class=\"thickbox\" title=\"%4s\">Check out what's new</a> or <a "
-"href=\"%5$s\"%6$s>update now</a>."
-msgstr ""
-
-#: theme-updater/theme-updater-functions.php:43
-#: theme-updater/theme-updater-functions.php:44
-#: theme-updater/theme-updater-functions.php:73
-msgid "Theme License"
-msgstr ""
-
-#: theme-updater/theme-updater-functions.php:63
-msgid "Enter your theme license key."
-msgstr ""
-
-#: theme-updater/theme-updater-functions.php:83
-msgid "License Key"
-msgstr ""
-
-#: theme-updater/theme-updater-functions.php:96
-msgid "License Action"
-msgstr ""
-
-#: theme-updater/theme-updater-functions.php:102
-msgid "Deactivate License"
-msgstr ""
-
-#: theme-updater/theme-updater-functions.php:104
-msgid "Activate License"
-msgstr ""
-
-#: theme-updater/theme-updater-functions.php:266
-#: theme-updater/theme-updater-functions.php:308
-msgid "License status is unknown."
-msgstr ""
-
-#: theme-updater/theme-updater-functions.php:282
-msgid "unlimited"
-msgstr ""
-
-#: theme-updater/theme-updater-functions.php:286
-msgid "License key is active."
-msgstr ""
-
-#: theme-updater/theme-updater-functions.php:288
-msgid "Expires %s."
-msgstr ""
-
-#: theme-updater/theme-updater-functions.php:291
-msgid "You have %1$s / %2$s site activated."
-msgid_plural "You have %1$s / %2$s sites activated."
-msgstr[0] ""
-msgstr[1] ""
-
-#: theme-updater/theme-updater-functions.php:295
-msgid "License key expired %s."
-msgstr ""
-
-#: theme-updater/theme-updater-functions.php:297
-msgid "License key has expired."
-msgstr ""
-
-#: theme-updater/theme-updater-functions.php:300
-msgid "License keys do not match."
-msgstr ""
-
-#: theme-updater/theme-updater-functions.php:302
-msgid "License is inactive."
-msgstr ""
-
-#: theme-updater/theme-updater-functions.php:304
-msgid "License key is disabled."
-msgstr ""
-
-#: theme-updater/theme-updater-functions.php:306
-msgid "Site is inactive."
 msgstr ""
 
 #. Theme Name of the plugin/theme

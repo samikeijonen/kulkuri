@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Kulkuri 1.0\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/theme/style\n"
-"POT-Creation-Date: 2014-06-14 08:40:38+00:00\n"
-"PO-Revision-Date: 2014-06-14 11:41+0200\n"
+"POT-Creation-Date: 2014-06-15 07:42:05+00:00\n"
+"PO-Revision-Date: 2014-06-15 10:42+0200\n"
 "Last-Translator: Sami Keijonen <sami.keijonen@foxnet.fi>\n"
 "Language-Team: Foxnet Themes <sami.keijonen@foxnet.fi>\n"
 "Language: fi\n"
@@ -26,105 +26,6 @@ msgid ""
 msgstr ""
 "Näyttää siltä, että mitään ei löytynyt tästä osoitteesta. Koita navigoida "
 "alla olevista linkeistä tai etsiä haluamaasi."
-
-#: admin/EDD_SL_Theme_Updater.php:54
-#: build/kulkuri/admin/EDD_SL_Theme_Updater.php:54
-msgid ""
-"Updating this theme will lose any customizations you have made. 'Cancel' to "
-"stop, 'OK' to update."
-msgstr ""
-"Jos olet tehnyt muutoksia tähän emoteemaan, menetät kaikki muutokset "
-"päivityksen yhteydessä. Valitse 'Cancel' peruuttaaksesi, 'OK' jatkaaksesi "
-"päivitykseen."
-
-#: admin/EDD_SL_Theme_Updater.php:59
-#: build/kulkuri/admin/EDD_SL_Theme_Updater.php:59
-msgid ""
-"<strong>%1$s %2$s</strong> is available. <a href=\"%3$s\" class=\"thickbox\" "
-"title=\"%4s\">Check out what's new</a> or <a href=\"%5$s\"%6$s>update now</"
-"a>."
-msgstr ""
-"<strong>%1$s %2$s</strong> on saatavilla. <a href=\"%3$s\" class=\"thickbox"
-"\" title=\"%4s\">Katso muutosloki</a> tai <a href=\"%5$s\"%6$s>päivitä nyt</"
-"a>."
-
-#: admin/functions-admin.php:77 admin/functions-admin.php:78
-#: build/kulkuri/admin/functions-admin.php:77
-#: build/kulkuri/admin/functions-admin.php:78
-msgid "Theme License"
-msgstr "Teeman lisenssiavain"
-
-#: admin/functions-admin.php:97 build/kulkuri/admin/functions-admin.php:97
-msgid "Enter your theme license key."
-msgstr "Kirjoita teeman lisenssiavain."
-
-#: admin/functions-admin.php:107 build/kulkuri/admin/functions-admin.php:107
-msgid "Theme License Options"
-msgstr "Teeman lisenssiavaimen asetukset"
-
-#: admin/functions-admin.php:117 build/kulkuri/admin/functions-admin.php:117
-msgid "License Key"
-msgstr "Lisenssiavain"
-
-#: admin/functions-admin.php:130 build/kulkuri/admin/functions-admin.php:130
-msgid "License Action"
-msgstr "Lisenssiavaimen aktivointi"
-
-#: admin/functions-admin.php:136 build/kulkuri/admin/functions-admin.php:136
-msgid "Deactivate License"
-msgstr "Ota lisenssi pois käytöstä"
-
-#: admin/functions-admin.php:138 build/kulkuri/admin/functions-admin.php:138
-msgid "Activate License"
-msgstr "Aktivoi lisenssiavain"
-
-#: admin/functions-admin.php:301 admin/functions-admin.php:342
-#: build/kulkuri/admin/functions-admin.php:301
-#: build/kulkuri/admin/functions-admin.php:342
-msgid "License status is unknown."
-msgstr "Lisenssiavaimen tila on tuntematon."
-
-#: admin/functions-admin.php:317 build/kulkuri/admin/functions-admin.php:317
-msgid "&#8734;"
-msgstr "&#8734;"
-
-#: admin/functions-admin.php:321 build/kulkuri/admin/functions-admin.php:321
-msgid "License key is active"
-msgstr "Lisenssiavain on aktiivinen"
-
-#: admin/functions-admin.php:323 build/kulkuri/admin/functions-admin.php:323
-msgid "and expires %s."
-msgstr "ja vanhenee %s."
-
-#: admin/functions-admin.php:326 build/kulkuri/admin/functions-admin.php:326
-msgid "You have %1$s / %2$s site activated."
-msgid_plural "You have %1$s / %2$s sites activated."
-msgstr[0] "Sinulla on %1$s / %2$s sivu aktiivisena."
-msgstr[1] "Sinulla on %1$s / %2$s sivua aktiivisena."
-
-#: admin/functions-admin.php:329 build/kulkuri/admin/functions-admin.php:329
-msgid "License key has expired."
-msgstr "Lisenssiavain on vanhentunut."
-
-#: admin/functions-admin.php:331 build/kulkuri/admin/functions-admin.php:331
-msgid "Expired %s."
-msgstr "Vanhentunut %s."
-
-#: admin/functions-admin.php:334 build/kulkuri/admin/functions-admin.php:334
-msgid "License keys do not match."
-msgstr "Lisenssiavaimet eivät täsmää."
-
-#: admin/functions-admin.php:336 build/kulkuri/admin/functions-admin.php:336
-msgid "License is inactive."
-msgstr "Lisenssiavain ei ole toiminnassa."
-
-#: admin/functions-admin.php:338 build/kulkuri/admin/functions-admin.php:338
-msgid "License key is disabled."
-msgstr "Lisenssiavain on poissa käytöstä."
-
-#: admin/functions-admin.php:340 build/kulkuri/admin/functions-admin.php:340
-msgid "Site is inactive."
-msgstr "Sivusto ei ole aktiivinen."
 
 #: build/kulkuri/comments.php:35 build/kulkuri/comments.php:52 comments.php:35
 #: comments.php:52
@@ -177,13 +78,13 @@ msgstr "Sivut:"
 
 #: build/kulkuri/content-single.php:28 build/kulkuri/content.php:26
 #: build/kulkuri/pages/front-page.php:134 content-single.php:28 content.php:26
-#: pages/front-page.php:134
+#: pages/front-page.php:142
 msgid "Posted in %s"
 msgstr "Artikkeli kategoriassa %s"
 
 #: build/kulkuri/content-single.php:29 build/kulkuri/content.php:27
 #: build/kulkuri/pages/front-page.php:135 content-single.php:29 content.php:27
-#: pages/front-page.php:135
+#: pages/front-page.php:143
 msgid "Tagged %s"
 msgstr "Avainsanat %s"
 
@@ -290,6 +191,120 @@ msgstr "Artikkelien selaus"
 #: build/kulkuri/search.php:16 search.php:16
 msgid "Search Results for: %s"
 msgstr "Hakutulokset haulle: %s"
+
+#: build/kulkuri/theme-updater/theme-updater-class.php:54
+#: theme-updater/theme-updater-class.php:54
+msgid ""
+"Updating this theme will lose any customizations you have made. 'Cancel' to "
+"stop, 'OK' to update."
+msgstr ""
+"Jos olet tehnyt muutoksia tähän emoteemaan, menetät kaikki muutokset "
+"päivityksen yhteydessä. Valitse 'Cancel' peruuttaaksesi, 'OK' jatkaaksesi "
+"päivitykseen."
+
+#: build/kulkuri/theme-updater/theme-updater-class.php:59
+#: theme-updater/theme-updater-class.php:59
+msgid ""
+"<strong>%1$s %2$s</strong> is available. <a href=\"%3$s\" class=\"thickbox\" "
+"title=\"%4s\">Check out what's new</a> or <a href=\"%5$s\"%6$s>update now</"
+"a>."
+msgstr ""
+"<strong>%1$s %2$s</strong> on saatavilla. <a href=\"%3$s\" class=\"thickbox"
+"\" title=\"%4s\">Katso muutosloki</a> tai <a href=\"%5$s\"%6$s>päivitä nyt</"
+"a>."
+
+#: build/kulkuri/theme-updater/theme-updater-functions.php:43
+#: build/kulkuri/theme-updater/theme-updater-functions.php:44
+#: build/kulkuri/theme-updater/theme-updater-functions.php:73
+#: theme-updater/theme-updater-functions.php:43
+#: theme-updater/theme-updater-functions.php:44
+#: theme-updater/theme-updater-functions.php:73
+msgid "Theme License"
+msgstr "Teeman lisenssiavain"
+
+#: build/kulkuri/theme-updater/theme-updater-functions.php:63
+#: theme-updater/theme-updater-functions.php:63
+msgid "Enter your theme license key."
+msgstr "Kirjoita teeman lisenssiavain."
+
+#: build/kulkuri/theme-updater/theme-updater-functions.php:83
+#: theme-updater/theme-updater-functions.php:83
+msgid "License Key"
+msgstr "Lisenssiavain"
+
+#: build/kulkuri/theme-updater/theme-updater-functions.php:96
+#: theme-updater/theme-updater-functions.php:96
+msgid "License Action"
+msgstr "Lisenssiavaimen aktivointi"
+
+#: build/kulkuri/theme-updater/theme-updater-functions.php:102
+#: theme-updater/theme-updater-functions.php:102
+msgid "Deactivate License"
+msgstr "Ota lisenssi pois käytöstä"
+
+#: build/kulkuri/theme-updater/theme-updater-functions.php:104
+#: theme-updater/theme-updater-functions.php:104
+msgid "Activate License"
+msgstr "Aktivoi lisenssiavain"
+
+#: build/kulkuri/theme-updater/theme-updater-functions.php:266
+#: build/kulkuri/theme-updater/theme-updater-functions.php:308
+#: theme-updater/theme-updater-functions.php:266
+#: theme-updater/theme-updater-functions.php:308
+msgid "License status is unknown."
+msgstr "Lisenssiavaimen tila on tuntematon."
+
+#: build/kulkuri/theme-updater/theme-updater-functions.php:282
+#: theme-updater/theme-updater-functions.php:282
+msgid "unlimited"
+msgstr "rajoittamaton"
+
+#: build/kulkuri/theme-updater/theme-updater-functions.php:286
+#: theme-updater/theme-updater-functions.php:286
+msgid "License key is active."
+msgstr "Lisenssiavain on aktiivinen."
+
+#: build/kulkuri/theme-updater/theme-updater-functions.php:288
+#: theme-updater/theme-updater-functions.php:288
+msgid "Expires %s."
+msgstr "Vanhenee %s."
+
+#: build/kulkuri/theme-updater/theme-updater-functions.php:291
+#: theme-updater/theme-updater-functions.php:291
+msgid "You have %1$s / %2$s site activated."
+msgid_plural "You have %1$s / %2$s sites activated."
+msgstr[0] "Sinulla on %1$s / %2$s sivu aktiivisena."
+msgstr[1] "Sinulla on %1$s / %2$s sivua aktiivisena."
+
+#: build/kulkuri/theme-updater/theme-updater-functions.php:295
+#: theme-updater/theme-updater-functions.php:295
+msgid "License key expired %s."
+msgstr "Lisenssiavain on vanhentunut %s."
+
+#: build/kulkuri/theme-updater/theme-updater-functions.php:297
+#: theme-updater/theme-updater-functions.php:297
+msgid "License key has expired."
+msgstr "Lisenssiavain on vanhentunut."
+
+#: build/kulkuri/theme-updater/theme-updater-functions.php:300
+#: theme-updater/theme-updater-functions.php:300
+msgid "License keys do not match."
+msgstr "Lisenssiavaimet eivät täsmää."
+
+#: build/kulkuri/theme-updater/theme-updater-functions.php:302
+#: theme-updater/theme-updater-functions.php:302
+msgid "License is inactive."
+msgstr "Lisenssiavain ei ole toiminnassa."
+
+#: build/kulkuri/theme-updater/theme-updater-functions.php:304
+#: theme-updater/theme-updater-functions.php:304
+msgid "License key is disabled."
+msgstr "Lisenssiavain on poissa käytöstä."
+
+#: build/kulkuri/theme-updater/theme-updater-functions.php:306
+#: theme-updater/theme-updater-functions.php:306
+msgid "Site is inactive."
+msgstr "Sivusto ei ole aktiivinen."
 
 #. Theme Name of the plugin/theme
 msgid "Kulkuri"

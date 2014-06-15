@@ -1,6 +1,6 @@
 <?php
 /**
- * Theme licensing for Easy Digital Downloads.
+ * Theme updater admin page and functions.
  *
  * @package Kulkuri
  */
@@ -13,7 +13,7 @@
 function kulkuri_updater() {
 
 	/* If there is no valid license key status, don't let updates. */
-	if( get_option( 'kulkuri_license_key_status' ) != 'valid' ) {
+	if( get_option( 'kulkuri_license_key_status', false ) != 'valid' ) {
 		return;
 	}
 
@@ -62,7 +62,7 @@ function kulkuri_license_page() {
 	if ( ! $license ) {
 		$message = __( 'Enter your theme license key.', 'kulkuri' );
 	} else {
-		delete_transient( 'kulkuri_license_message' );
+		// delete_transient( 'kulkuri_license_message' );
 		if ( ! get_transient( 'kulkuri_license_message', false ) ) {
 			set_transient( 'kulkuri_license_message', kulkuri_check_license(), ( 60 * 60 * 24 ) );
 		}
@@ -70,7 +70,7 @@ function kulkuri_license_page() {
 	}
 	?>
 	<div class="wrap">
-		<h2><?php _e( 'Theme License Options', 'kulkuri' ); ?></h2>
+		<h2><?php _e( 'Theme License', 'kulkuri' ); ?></h2>
 		<form method="post" action="options.php">
 
 			<?php settings_fields( 'kulkuri_license' ); ?>
@@ -83,7 +83,7 @@ function kulkuri_license_page() {
 							<?php _e( 'License Key', 'kulkuri' ); ?>
 						</th>
 						<td>
-							<input id="kulkuri_license_key" name="kulkuri_license_key" type="text" class="regular-text" value="<?php esc_attr_e( $license ); ?>" />
+							<input id="kulkuri_license_key" name="kulkuri_license_key" type="text" class="regular-text" value="<?php echo esc_attr( $license ); ?>" />
 							<p class="description">
 								<?php echo $message; ?>
 							</p>
@@ -102,8 +102,7 @@ function kulkuri_license_page() {
 								<input type="submit" class="button-secondary" name="kulkuri_license_deactivate" value="<?php esc_attr_e( 'Deactivate License', 'kulkuri' ); ?>"/>
 							<?php } else { ?>
 								<input type="submit" class="button-secondary" name="kulkuri_license_activate" value="<?php esc_attr_e( 'Activate License', 'kulkuri' ); ?>"/>
-							<?php }
-							?>
+							<?php } ?>
 						</td>
 					</tr>
 					<?php } ?>
@@ -262,39 +261,40 @@ function kulkuri_check_license() {
 
 	$license_data = json_decode( wp_remote_retrieve_body( $response ) );
 	
-	/* If response doesn't include license data, return. */
+	// If response doesn't include license data, return.
 	if ( !isset( $license_data->license ) ) {
 		$message = __( 'License status is unknown.', 'kulkuri' );
 		return $message;
 	}
 
-	/* Get expire date. */
+	// Get expire date.
 	$expires = false;
 	if ( $license_data->expires ) {
 		$expires = date_i18n( get_option( 'date_format' ), strtotime( $license_data->expires ) );
 	}
 	
-	/* Get site counts. */
+	// Get site counts.
 	$site_count = $license_data->site_count;
 	$license_limit = $license_data->license_limit;
 	
-	/* If unlimited use infinity sign. */
+	// If unlimited.
 	if( 0 == $license_limit ) {
-		$license_limit = __( '&#8734;', 'kulkuri' );
+		$license_limit = __( 'unlimited', 'kulkuri' );
 	}
 
 	if ( $license_data->license == 'valid' ) {
-		$message = __( 'License key is active', 'kulkuri' ) . ' ';
+		$message = __( 'License key is active.', 'kulkuri' ) . ' ';
 		if ( $expires ) {
-			$message .= sprintf( __( 'and expires %s.', 'kulkuri' ), $expires ) . ' ';
+			$message .= sprintf( __( 'Expires %s.', 'kulkuri' ), $expires ) . ' ';
 		}
 		if ( $site_count && $license_limit ) {
 			$message .= sprintf( _n( 'You have %1$s / %2$s site activated.', 'You have %1$s / %2$s sites activated.', $site_count, 'kulkuri' ), $site_count, $license_limit );
 		}
 	} else if ( $license_data->license == 'expired' ) {
-		$message = __( 'License key has expired.', 'kulkuri' ) . ' ';
 		if ( $expires ) {
-			$message .= sprintf( __( 'Expired %s.', 'kulkuri' ), $expires );
+			$message = sprintf( __( 'License key expired %s.', 'kulkuri' ), $expires );
+		} else {
+			$message = __( 'License key has expired.', 'kulkuri' );
 		}
 	} else if ( $license_data->license == 'invalid' ) {
 		$message = __( 'License keys do not match.', 'kulkuri' );

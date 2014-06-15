@@ -16,81 +16,89 @@ get_header(); ?>
 			
 		/* Set Query only if we have active 'primary' menu. */
 		if( has_nav_menu( 'primary' ) ) :
+		
+			/* Get post IDs from primary menu. */
+			$kulkuri_post_ids = kulkuri_get_posts_for_menu( 'primary' );
 			
-			$kulkuri_section_args = apply_filters( 'kulkuri_front_page_section_arguments', array(
-				'post_type'           => array( 'page' ),
-				'post__in'            => kulkuri_get_posts_for_menu( 'primary' ),
-				'post_status'         => 'publish',
-				'ignore_sticky_posts' => 1,
-				'orderby'             => 'post__in',
-				'order'               => 'asc'
-			) );
+			/* Check that we have IDs. */
+			if ( ! empty( $kulkuri_post_ids ) ) :
 			
-			/* Set transient (24h) for faster loading. Delete transient on hook 'wp_update_nav_menu' in functions.php file. */
-			if( false === ( $kulkuri_section_query = get_transient( 'kulkuri_section_query' ) ) ) {
-				$kulkuri_section_query = new WP_Query( $kulkuri_section_args );
-				set_transient( 'kulkuri_section_query', $kulkuri_section_query, 60*60*24 );
-			}
+				$kulkuri_section_args = apply_filters( 'kulkuri_front_page_section_arguments', array(
+					'post_type'           => array( 'page' ),
+					'post__in'            => $kulkuri_post_ids,
+					'post_status'         => 'publish',
+					'ignore_sticky_posts' => 1,
+					'orderby'             => 'post__in',
+					'order'               => 'asc'
+				) );
 			
-			if ( $kulkuri_section_query->have_posts() ) :
+				/* Set transient (24h) for faster loading. Delete transient on hook 'wp_update_nav_menu' in functions.php file. */
+				if( false === ( $kulkuri_section_query = get_transient( 'kulkuri_section_query' ) ) ) {
+					$kulkuri_section_query = new WP_Query( $kulkuri_section_args );
+					set_transient( 'kulkuri_section_query', $kulkuri_section_query, 60*60*24 );
+				}
 			
-				$k=1;
+				if ( $kulkuri_section_query->have_posts() ) :
+			
+					$k=1;
 
-				while ( $kulkuri_section_query->have_posts() ) : $kulkuri_section_query->the_post();
+					while ( $kulkuri_section_query->have_posts() ) : $kulkuri_section_query->the_post();
 		
-					/* Get background color. */
-					if ( get_theme_mod( 'background_color_' . $k ) ) :
-						$kulkuri_section_bg_color = 'background-color: ' . get_theme_mod( 'background_color_' . $k , '#ffffff' ) . ';';
-					else :
-						$kulkuri_section_bg_color = '';
-					endif;	
+						/* Get background color. */
+						if ( get_theme_mod( 'background_color_' . $k ) ) :
+							$kulkuri_section_bg_color = 'background-color: ' . get_theme_mod( 'background_color_' . $k , '#ffffff' ) . ';';
+						else :
+							$kulkuri_section_bg_color = '';
+						endif;	
 					
-					/* Get background image. */
-					if ( get_theme_mod( 'background_image_' . $k ) ) :
-						$kulkuri_section_bg_image = 'background-image: url(' . esc_url( get_theme_mod( 'background_image_' . $k ) ) . ');';
-					else :
-						$kulkuri_section_bg_image = '';
-					endif;
+						/* Get background image. */
+						if ( get_theme_mod( 'background_image_' . $k ) ) :
+							$kulkuri_section_bg_image = 'background-image: url(' . esc_url( get_theme_mod( 'background_image_' . $k ) ) . ');';
+						else :
+							$kulkuri_section_bg_image = '';
+						endif;
 					
-					/* Get page slug. */
-					$kulkuri_page = get_post( get_the_ID() ); 
-					$kulkuri_page_slug = $kulkuri_page->post_name;
+						/* Get page slug. */
+						$kulkuri_page = get_post( get_the_ID() ); 
+						$kulkuri_page_slug = $kulkuri_page->post_name;
 					
-					// $kulkuri_page_slug = str_replace ( ' ', '-', strtolower( esc_attr( get_the_title() ) ) );
+						// $kulkuri_page_slug = str_replace ( ' ', '-', strtolower( esc_attr( get_the_title() ) ) );
 					
-					do_action( 'kulkuri_front_page_before_section_' . $k ); // Add hook where we can filter new stuff. ?>
+						do_action( 'kulkuri_front_page_before_section_' . $k ); // Add hook where we can filter new stuff. ?>
 					
-					<section style="<?php echo $kulkuri_section_bg_color . $kulkuri_section_bg_image; ?>" id="<?php echo esc_attr( $kulkuri_page_slug ); ?>" class="kulkuri-section kulkuri-section-<?php echo $k; ?>">
-						<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+						<section style="<?php echo $kulkuri_section_bg_color . $kulkuri_section_bg_image; ?>" id="<?php echo esc_attr( $kulkuri_page_slug ); ?>" class="kulkuri-section kulkuri-section-<?php echo $k; ?>">
+							<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 			
-							<div class="wrapper-inner">
+								<div class="wrapper-inner">
 				
-								<header class="entry-header">
-									<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+									<header class="entry-header">
+										<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 									
-									<?php if ( has_excerpt() ) { ?>
-										<div class="entry-summary">
-											<?php the_excerpt(); ?>
-										</div><!-- .entry-summary -->
-									<?php } ?>
-								</header><!-- .entry-header -->
+										<?php if ( has_excerpt() ) { ?>
+											<div class="entry-summary">
+												<?php the_excerpt(); ?>
+											</div><!-- .entry-summary -->
+										<?php } ?>
+									</header><!-- .entry-header -->
 								
-								<div class="entry-content">
-									<?php the_content(); ?>
-								</div><!-- .entry-content -->
+									<div class="entry-content">
+										<?php the_content(); ?>
+									</div><!-- .entry-content -->
 				
-							</div><!-- .wrapper-inner -->
+								</div><!-- .wrapper-inner -->
 					
-						</article><!-- .entry -->
-					</section><!-- #slug -->
+							</article><!-- .entry -->
+						</section><!-- #slug -->
 					
-					<?php do_action( 'kulkuri_front_page_after_section_' . $k ); // Add hook where we can filter new stuff. ?>
+						<?php do_action( 'kulkuri_front_page_after_section_' . $k ); // Add hook where we can filter new stuff. ?>
 		
-					<?php $k++; // Add one before loop ends. ?>
+						<?php $k++; // Add one before loop ends. ?>
 					
-				<?php endwhile; //End loop. ?>
+					<?php endwhile; //End loop. ?>
 				
-			<?php endif; wp_reset_postdata(); // reset query. ?>
+				<?php endif; wp_reset_postdata(); // reset query. ?>
+			
+			<?php endif; // End check for post IDs. ?>
 			
 		<?php endif; // has nav menu 'primary'.
 			

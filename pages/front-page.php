@@ -62,8 +62,6 @@ get_header(); ?>
 						$kulkuri_page = get_post( get_the_ID() ); 
 						$kulkuri_page_slug = $kulkuri_page->post_name;
 					
-						// $kulkuri_page_slug = str_replace ( ' ', '-', strtolower( esc_attr( get_the_title() ) ) );
-					
 						do_action( 'kulkuri_front_page_before_section_' . $k ); // Add hook where we can filter new stuff. ?>
 					
 						<section style="<?php echo $kulkuri_section_bg_color . $kulkuri_section_bg_image; ?>" id="<?php echo esc_attr( $kulkuri_page_slug ); ?>" class="kulkuri-section kulkuri-section-<?php echo $k; ?>">
@@ -73,12 +71,6 @@ get_header(); ?>
 				
 									<header class="entry-header">
 										<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-									
-										<?php if ( has_excerpt() ) { ?>
-											<div class="entry-summary">
-												<?php the_excerpt(); ?>
-											</div><!-- .entry-summary -->
-										<?php } ?>
 									</header><!-- .entry-header -->
 								
 									<div class="entry-content">

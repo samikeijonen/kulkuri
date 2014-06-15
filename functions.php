@@ -93,9 +93,6 @@ function kulkuri_setup() {
 	/* Add Editor styles. */
 	add_editor_style( kulkuri_get_editor_styles() );
 	
-	/* Add excerpt support for pages. */
-	add_post_type_support( 'page', 'excerpt' );
-	
 }
 endif; // kulkuri_setup
 add_action( 'after_setup_theme', 'kulkuri_setup' );

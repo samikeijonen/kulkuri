@@ -93,58 +93,69 @@ function kulkuri_customize_register_settings( $wp_customize ) {
  		)
 	);
 	
-	/* Loop same setting couple of times. */
-	$k = 1;
-	
-	while( $k < absint( apply_filters( 'kulkuri_how_many_pages', 8 ) ) ) {
-			
-		/* Add the 'background_color' setting. */
-		$wp_customize->add_setting(
-			'background_color_' . $k,
-			array(
-				'default'           => '#ffffff',
-				'sanitize_callback' => 'sanitize_hex_color'
-			)
-		);
-	
-		$wp_customize->add_control(
-			new WP_Customize_Color_Control(
-				$wp_customize,
-				'background-color-control-' . $k,
-					array(
-						'label'     => sprintf( esc_html__( 'Background color %s', 'kulkuri' ), $k ),
-						'section'   => 'theme',
-						'settings'  => 'background_color_' . $k,
-						'priority'  => $k*10+1
-				)
-			)
-		);
-		
-		/* Add the 'background_image' setting. */
-		$wp_customize->add_setting(
-			'background_image_' . $k,
-			array(
-				'default'           => '',
-				'sanitize_callback' => 'esc_url_raw'
-			)
-		);
-	
-		/* Add custom logo control. */
-		$wp_customize->add_control(
-			new WP_Customize_Color_Control(
-				$wp_customize, 'background-image-control-' . $k,
-					array(
-						'label'    => sprintf( esc_html__( 'Background image %s', 'kulkuri' ), $k ),
-						'section'  => 'theme',
-						'settings'  => 'background_image_' . $k,
-						'priority'  => $k*10+2
-				) 
-			) 
-		);
-		
-		$k++; // Add one before loop ends.
-		
+	/* Get post IDs from primary menu and count them. */
+	if ( has_nav_menu( 'primary' ) ) {
+		$kulkuri_post_ids = kulkuri_get_posts_for_menu( 'primary' );
+		$kulkuri_how_many_pages = count( $kulkuri_post_ids );
 	}
+	
+	/* Loop background color and image settings if there are selected pages in primary menu. */
+	if ( !empty( $kulkuri_post_ids ) && $kulkuri_how_many_pages > 0 ) :
+	
+		/* Loop same setting couple of times. */
+		$k = 1;
+	
+		while( $k < absint( apply_filters( 'kulkuri_how_many_pages', $kulkuri_how_many_pages ) ) ) :
+			
+			/* Add the 'background_color' setting. */
+			$wp_customize->add_setting(
+				'background_color_' . $k,
+				array(
+					'default'           => '#ffffff',
+					'sanitize_callback' => 'sanitize_hex_color'
+				)
+			);
+	
+			$wp_customize->add_control(
+				new WP_Customize_Color_Control(
+					$wp_customize,
+					'background-color-control-' . $k,
+						array(
+							'label'     => sprintf( esc_html__( 'Background color %s', 'kulkuri' ), $k ),
+							'section'   => 'theme',
+							'settings'  => 'background_color_' . $k,
+							'priority'  => $k*10+1
+					)
+				)
+			);
+		
+			/* Add the 'background_image' setting. */
+			$wp_customize->add_setting(
+				'background_image_' . $k,
+				array(
+					'default'           => '',
+					'sanitize_callback' => 'esc_url_raw'
+				)
+			);
+	
+			/* Add custom 'background_image' control. */
+			$wp_customize->add_control(
+				new WP_Customize_Image_Control(
+					$wp_customize, 'background-image-control-' . $k,
+						array(
+							'label'    => sprintf( esc_html__( 'Background image %s', 'kulkuri' ), $k ),
+							'section'  => 'theme',
+							'settings'  => 'background_image_' . $k,
+							'priority'  => $k*10+2
+					) 
+				) 
+			);
+		
+			$k++; // Add one before loop ends.
+		
+		endwhile; // End while loop.
+	
+	endif; // End check for primary menu items.
 	
 	/* Add the show latest posts setting. */
 	$wp_customize->add_setting(

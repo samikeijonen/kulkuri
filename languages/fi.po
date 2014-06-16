@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Kulkuri 1.0\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/theme/style\n"
-"POT-Creation-Date: 2014-06-15 07:42:05+00:00\n"
-"PO-Revision-Date: 2014-06-15 10:42+0200\n"
+"POT-Creation-Date: 2014-06-16 19:06:29+00:00\n"
+"PO-Revision-Date: 2014-06-16 22:09+0200\n"
 "Last-Translator: Sami Keijonen <sami.keijonen@foxnet.fi>\n"
 "Language-Team: Foxnet Themes <sami.keijonen@foxnet.fi>\n"
 "Language: fi\n"
@@ -15,11 +15,11 @@ msgstr ""
 "X-Generator: Poedit 1.6.5\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: 404.php:15 build/kulkuri/404.php:15
+#: 404.php:15
 msgid "Oops! That page can&rsquo;t be found."
 msgstr "Ups! Tätä sivua ei löydy."
 
-#: 404.php:19 build/kulkuri/404.php:19
+#: 404.php:19
 msgid ""
 "It looks like nothing was found at this location. Maybe try one of the links "
 "below or a search?"
@@ -27,37 +27,34 @@ msgstr ""
 "Näyttää siltä, että mitään ei löytynyt tästä osoitteesta. Koita navigoida "
 "alla olevista linkeistä tai etsiä haluamaasi."
 
-#: build/kulkuri/comments.php:35 build/kulkuri/comments.php:52 comments.php:35
-#: comments.php:52
+#: comments.php:35 comments.php:52
 msgid "Comment navigation"
 msgstr "Kommenttien selaus"
 
-#: build/kulkuri/comments.php:36 build/kulkuri/comments.php:53 comments.php:36
-#: comments.php:53
+#: comments.php:36 comments.php:53
 msgid "&larr; Older Comments"
 msgstr "&larr; Vanhemmat kommentit"
 
-#: build/kulkuri/comments.php:37 build/kulkuri/comments.php:54 comments.php:37
-#: comments.php:54
+#: comments.php:37 comments.php:54
 msgid "Newer Comments &rarr;"
 msgstr "Uudemmat kommentit &rarr;"
 
-#: build/kulkuri/comments.php:64 comments.php:64
+#: comments.php:64
 msgid "Comments are closed."
 msgstr "Kommentointi on suljettu."
 
-#: build/kulkuri/content-none.php:13 content-none.php:13
+#: content-none.php:13
 msgid "Nothing Found"
 msgstr "Mitään ei löytynyt"
 
-#: build/kulkuri/content-none.php:19 content-none.php:19
+#: content-none.php:19
 msgid ""
 "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
 "Oletko valmis julkaisemaan ensimmäisen kirjoituksesi? <a href=\"%1$s"
 "\">Aloita tästä</a>."
 
-#: build/kulkuri/content-none.php:23 content-none.php:23
+#: content-none.php:23
 msgid ""
 "Sorry, but nothing matched your search terms. Please try again with some "
 "different keywords."
@@ -65,135 +62,205 @@ msgstr ""
 "Hakusi ei valitettavasti tuottanut yhtään tulosta. Yritä uudelleen eri "
 "hakusanoilla."
 
-#: build/kulkuri/content-none.php:28 content-none.php:28
+#: content-none.php:28
 msgid ""
 "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
 "searching can help."
 msgstr "Emme valitettavasti löytäneet etsimääsi. Ehkä hakutoiminnosta on apua."
 
-#: build/kulkuri/content-page.php:19 build/kulkuri/content-single.php:21
 #: content-page.php:19 content-single.php:21
 msgid "Pages:"
 msgstr "Sivut:"
 
-#: build/kulkuri/content-single.php:28 build/kulkuri/content.php:26
-#: build/kulkuri/pages/front-page.php:134 content-single.php:28 content.php:26
-#: pages/front-page.php:142
+#: content-single.php:28 content.php:26 pages/front-page.php:134
 msgid "Posted in %s"
 msgstr "Artikkeli kategoriassa %s"
 
-#: build/kulkuri/content-single.php:29 build/kulkuri/content.php:27
-#: build/kulkuri/pages/front-page.php:135 content-single.php:29 content.php:27
-#: pages/front-page.php:143
+#: content-single.php:29 content.php:27 pages/front-page.php:135
 msgid "Tagged %s"
 msgstr "Avainsanat %s"
 
-#: build/kulkuri/functions.php:72 functions.php:72
+#: functions.php:72
 msgid "Front Page Menu"
 msgstr "Etusivun valikko"
 
-#: build/kulkuri/functions.php:73 functions.php:73
+#: functions.php:73
 msgid "Not Front Page Menu"
 msgstr "Muiden sivujen valikko"
 
-#: build/kulkuri/functions.php:74 functions.php:74
+#: functions.php:74
 msgid "Social Menu"
 msgstr "Somevalikko"
 
-#: build/kulkuri/functions.php:125 functions.php:125
+#: functions.php:122
 msgid "A sidebar located in the footer of the site."
 msgstr "Sivupalkki sijaitsee alapalkissa."
 
-#: build/kulkuri/functions.php:156 build/kulkuri/functions.php:169
-#: functions.php:156 functions.php:169
+#: functions.php:153 functions.php:166
 msgid "Menu"
 msgstr "Valikko"
 
-#: build/kulkuri/functions.php:298 functions.php:298
+#: functions.php:295
 msgid "http://wordpress.org/"
 msgstr "http://wordpress.org/"
 
-#: build/kulkuri/functions.php:298 functions.php:298
+#: functions.php:295
 msgid "A Semantic Personal Publishing Platform"
 msgstr "Semanttinen, henkilökohtainen julkaisualusta"
 
-#: build/kulkuri/functions.php:298 functions.php:298
+#: functions.php:295
 msgid "Proudly powered by %s"
 msgstr "Voimanlähteenä %s"
 
-#: build/kulkuri/functions.php:299 functions.php:299
+#: functions.php:296
 msgid "&middot;"
 msgstr "&middot;"
 
-#: build/kulkuri/functions.php:300 functions.php:300
+#: functions.php:297
 msgid "Theme: %1$s by %2$s."
 msgstr "Teema: %1$s tekijä %2$s."
 
-#: build/kulkuri/header.php:24 header.php:24
+#: header.php:24
 msgid "Skip to content"
 msgstr "Hyppää sisältöön"
 
-#: build/kulkuri/inc/customizer.php:24 inc/customizer.php:24
+#: inc/customizer.php:24
 msgid "Theme"
 msgstr "Teema"
 
-#: build/kulkuri/inc/customizer.php:44 inc/customizer.php:44
+#: inc/customizer.php:44
 msgid "Use boxed layout in all pages."
 msgstr "Käytä \"laatikko\"-ulkoasua kaikilla sivuilla."
 
-#: build/kulkuri/inc/customizer.php:67 inc/customizer.php:67
+#: inc/customizer.php:67
 msgid "Callout URL"
 msgstr "Callout URL-linkki"
 
-#: build/kulkuri/inc/customizer.php:88 inc/customizer.php:88
+#: inc/customizer.php:88
 msgid "Callout URL text"
 msgstr "Callout URL-linkin teksti"
 
-#: build/kulkuri/inc/customizer.php:115 inc/customizer.php:115
+#: inc/customizer.php:124
 msgid "Background color %s"
 msgstr "Taustaväri %s"
 
-#: build/kulkuri/inc/customizer.php:137 inc/customizer.php:137
+#: inc/customizer.php:146
 msgid "Background image %s"
 msgstr "Taustakuva %s"
 
-#: build/kulkuri/inc/customizer.php:162 inc/customizer.php:162
+#: inc/customizer.php:173
 msgid "Show latest posts on front page"
 msgstr "Näytä viimeisimmät artikkelit etusivulla"
 
-#: build/kulkuri/inc/customizer.php:186 inc/customizer.php:186
+#: inc/customizer.php:197
 msgid "Upload custom logo."
 msgstr "Lataa logo."
 
-#: build/kulkuri/inc/extras.php:51 inc/extras.php:51
+#: inc/extras.php:51
 msgid "Page %s"
 msgstr "Sivu %s"
 
-#: build/kulkuri/inc/template-tags.php:21 inc/template-tags.php:21
+#: inc/template-tags.php:21
 msgid "Posts navigation"
 msgstr "Artikkelien selaus"
 
-#: build/kulkuri/inc/template-tags.php:25 inc/template-tags.php:25
+#: inc/template-tags.php:25
 msgid "<span class=\"screen-reader-text meta-nav\">&larr;</span> Older posts"
 msgstr ""
 "<span class=\"screen-reader-text meta-nav\">&larr;</span> Vanhemmat "
 "artikkelit"
 
-#: build/kulkuri/inc/template-tags.php:29 inc/template-tags.php:29
+#: inc/template-tags.php:29
 msgid "Newer posts <span class=\"screen-reader-text meta-nav\">&rarr;</span>"
 msgstr ""
 "Uudemmat artikkelit <span class=\"screen-reader-text meta-nav\">&rarr;</span>"
 
-#: build/kulkuri/inc/template-tags.php:52 inc/template-tags.php:52
+#: inc/template-tags.php:52
 msgid "Post navigation"
 msgstr "Artikkelien selaus"
 
-#: build/kulkuri/search.php:16 search.php:16
+#: search.php:16
 msgid "Search Results for: %s"
 msgstr "Hakutulokset haulle: %s"
 
-#: build/kulkuri/theme-updater/theme-updater-class.php:54
-#: theme-updater/theme-updater-class.php:54
+#: theme-updater/theme-updater-admin.php:76
+#: theme-updater/theme-updater-admin.php:77
+#: theme-updater/theme-updater-admin.php:106
+msgid "Theme License"
+msgstr "Teeman lisenssiavain"
+
+#: theme-updater/theme-updater-admin.php:96
+msgid "Enter your theme license key."
+msgstr "Kirjoita teeman lisenssiavain."
+
+#: theme-updater/theme-updater-admin.php:116
+msgid "License Key"
+msgstr "Lisenssiavain"
+
+#: theme-updater/theme-updater-admin.php:129
+msgid "License Action"
+msgstr "Lisenssiavaimen aktivointi"
+
+#: theme-updater/theme-updater-admin.php:135
+msgid "Deactivate License"
+msgstr "Ota lisenssi pois käytöstä"
+
+#: theme-updater/theme-updater-admin.php:137
+msgid "Activate License"
+msgstr "Aktivoi lisenssiavain"
+
+#: theme-updater/theme-updater-admin.php:305
+#: theme-updater/theme-updater-admin.php:352
+msgid "License status is unknown."
+msgstr "Lisenssiavaimen tila on tuntematon."
+
+#: theme-updater/theme-updater-admin.php:313
+msgid "Renew?"
+msgstr "Uusi lisenssi?"
+
+#: theme-updater/theme-updater-admin.php:322
+msgid "unlimited"
+msgstr "rajoittamaton"
+
+#: theme-updater/theme-updater-admin.php:326
+msgid "License key is active."
+msgstr "Lisenssiavain on aktiivinen."
+
+#: theme-updater/theme-updater-admin.php:328
+msgid "Expires %s."
+msgstr "Vanhenee %s."
+
+#: theme-updater/theme-updater-admin.php:331
+msgid "You have %1$s / %2$s site activated."
+msgid_plural "You have %1$s / %2$s sites activated."
+msgstr[0] "Sinulla on %1$s / %2$s sivu aktiivisena."
+msgstr[1] "Sinulla on %1$s / %2$s sivua aktiivisena."
+
+#: theme-updater/theme-updater-admin.php:335
+msgid "License key expired %s."
+msgstr "Lisenssiavain on vanhentunut %s."
+
+#: theme-updater/theme-updater-admin.php:337
+msgid "License key has expired."
+msgstr "Lisenssiavain on vanhentunut."
+
+#: theme-updater/theme-updater-admin.php:343
+msgid "License keys do not match."
+msgstr "Lisenssiavaimet eivät täsmää."
+
+#: theme-updater/theme-updater-admin.php:345
+msgid "License is inactive."
+msgstr "Lisenssiavain ei ole toiminnassa."
+
+#: theme-updater/theme-updater-admin.php:347
+msgid "License key is disabled."
+msgstr "Lisenssiavain on poissa käytöstä."
+
+#: theme-updater/theme-updater-admin.php:350
+msgid "Site is inactive."
+msgstr "Sivusto ei ole aktiivinen."
+
+#: theme-updater/theme-updater-class.php:55
 msgid ""
 "Updating this theme will lose any customizations you have made. 'Cancel' to "
 "stop, 'OK' to update."
@@ -202,8 +269,7 @@ msgstr ""
 "päivityksen yhteydessä. Valitse 'Cancel' peruuttaaksesi, 'OK' jatkaaksesi "
 "päivitykseen."
 
-#: build/kulkuri/theme-updater/theme-updater-class.php:59
-#: theme-updater/theme-updater-class.php:59
+#: theme-updater/theme-updater-class.php:60
 msgid ""
 "<strong>%1$s %2$s</strong> is available. <a href=\"%3$s\" class=\"thickbox\" "
 "title=\"%4s\">Check out what's new</a> or <a href=\"%5$s\"%6$s>update now</"
@@ -212,99 +278,6 @@ msgstr ""
 "<strong>%1$s %2$s</strong> on saatavilla. <a href=\"%3$s\" class=\"thickbox"
 "\" title=\"%4s\">Katso muutosloki</a> tai <a href=\"%5$s\"%6$s>päivitä nyt</"
 "a>."
-
-#: build/kulkuri/theme-updater/theme-updater-functions.php:43
-#: build/kulkuri/theme-updater/theme-updater-functions.php:44
-#: build/kulkuri/theme-updater/theme-updater-functions.php:73
-#: theme-updater/theme-updater-functions.php:43
-#: theme-updater/theme-updater-functions.php:44
-#: theme-updater/theme-updater-functions.php:73
-msgid "Theme License"
-msgstr "Teeman lisenssiavain"
-
-#: build/kulkuri/theme-updater/theme-updater-functions.php:63
-#: theme-updater/theme-updater-functions.php:63
-msgid "Enter your theme license key."
-msgstr "Kirjoita teeman lisenssiavain."
-
-#: build/kulkuri/theme-updater/theme-updater-functions.php:83
-#: theme-updater/theme-updater-functions.php:83
-msgid "License Key"
-msgstr "Lisenssiavain"
-
-#: build/kulkuri/theme-updater/theme-updater-functions.php:96
-#: theme-updater/theme-updater-functions.php:96
-msgid "License Action"
-msgstr "Lisenssiavaimen aktivointi"
-
-#: build/kulkuri/theme-updater/theme-updater-functions.php:102
-#: theme-updater/theme-updater-functions.php:102
-msgid "Deactivate License"
-msgstr "Ota lisenssi pois käytöstä"
-
-#: build/kulkuri/theme-updater/theme-updater-functions.php:104
-#: theme-updater/theme-updater-functions.php:104
-msgid "Activate License"
-msgstr "Aktivoi lisenssiavain"
-
-#: build/kulkuri/theme-updater/theme-updater-functions.php:266
-#: build/kulkuri/theme-updater/theme-updater-functions.php:308
-#: theme-updater/theme-updater-functions.php:266
-#: theme-updater/theme-updater-functions.php:308
-msgid "License status is unknown."
-msgstr "Lisenssiavaimen tila on tuntematon."
-
-#: build/kulkuri/theme-updater/theme-updater-functions.php:282
-#: theme-updater/theme-updater-functions.php:282
-msgid "unlimited"
-msgstr "rajoittamaton"
-
-#: build/kulkuri/theme-updater/theme-updater-functions.php:286
-#: theme-updater/theme-updater-functions.php:286
-msgid "License key is active."
-msgstr "Lisenssiavain on aktiivinen."
-
-#: build/kulkuri/theme-updater/theme-updater-functions.php:288
-#: theme-updater/theme-updater-functions.php:288
-msgid "Expires %s."
-msgstr "Vanhenee %s."
-
-#: build/kulkuri/theme-updater/theme-updater-functions.php:291
-#: theme-updater/theme-updater-functions.php:291
-msgid "You have %1$s / %2$s site activated."
-msgid_plural "You have %1$s / %2$s sites activated."
-msgstr[0] "Sinulla on %1$s / %2$s sivu aktiivisena."
-msgstr[1] "Sinulla on %1$s / %2$s sivua aktiivisena."
-
-#: build/kulkuri/theme-updater/theme-updater-functions.php:295
-#: theme-updater/theme-updater-functions.php:295
-msgid "License key expired %s."
-msgstr "Lisenssiavain on vanhentunut %s."
-
-#: build/kulkuri/theme-updater/theme-updater-functions.php:297
-#: theme-updater/theme-updater-functions.php:297
-msgid "License key has expired."
-msgstr "Lisenssiavain on vanhentunut."
-
-#: build/kulkuri/theme-updater/theme-updater-functions.php:300
-#: theme-updater/theme-updater-functions.php:300
-msgid "License keys do not match."
-msgstr "Lisenssiavaimet eivät täsmää."
-
-#: build/kulkuri/theme-updater/theme-updater-functions.php:302
-#: theme-updater/theme-updater-functions.php:302
-msgid "License is inactive."
-msgstr "Lisenssiavain ei ole toiminnassa."
-
-#: build/kulkuri/theme-updater/theme-updater-functions.php:304
-#: theme-updater/theme-updater-functions.php:304
-msgid "License key is disabled."
-msgstr "Lisenssiavain on poissa käytöstä."
-
-#: build/kulkuri/theme-updater/theme-updater-functions.php:306
-#: theme-updater/theme-updater-functions.php:306
-msgid "Site is inactive."
-msgstr "Sivusto ei ole aktiivinen."
 
 #. Theme Name of the plugin/theme
 msgid "Kulkuri"
@@ -335,30 +308,30 @@ msgstr "https://foxnet-themes.fi/"
 msgid "Front Page"
 msgstr "Etusivu"
 
-#: build/kulkuri/comments.php:28 comments.php:28
+#: comments.php:28
 msgctxt "comments title"
 msgid "One thought on &ldquo;%2$s&rdquo;"
 msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
 msgstr[0] "Yksi kommentti: &ldquo;%2$s&rdquo;"
 msgstr[1] "%1$s kommenttia: &ldquo;%2$s&rdquo;"
 
-#: build/kulkuri/functions.php:124 functions.php:124
+#: functions.php:121
 msgctxt "sidebar"
 msgid "Subsidiary"
 msgstr "Alapalkin vimpainalue"
 
-#: build/kulkuri/inc/template-tags.php:55 inc/template-tags.php:55
+#: inc/template-tags.php:55
 msgctxt "Previous post link"
 msgid "<span class=\"screen-reader-text meta-nav\">&larr;</span> %title"
 msgstr "<span class=\"screen-reader-text meta-nav\">&larr;</span> %title"
 
-#: build/kulkuri/inc/template-tags.php:56 inc/template-tags.php:56
+#: inc/template-tags.php:56
 msgctxt "Next post link"
 msgid "%title <span class=\"screen-reader-text meta-nav\">&rarr;</span>"
 msgstr "%title <span class=\"screen-reader-text meta-nav\">&rarr;</span>"
 
 #. Translators: Separates tags, categories, etc. when displaying a post.
-#: build/kulkuri/inc/template-tags.php:109 inc/template-tags.php:109
+#: inc/template-tags.php:109
 msgctxt "taxonomy terms separator"
 msgid ", "
 msgstr ", "

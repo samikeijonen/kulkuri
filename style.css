@@ -853,16 +853,11 @@ a.nav-toggle {
 }
 .comment-navigation .nav-previous,
 .paging-navigation .nav-previous,
-.post-navigation .nav-previous {
-	float: left;
-	width: 50%;
-}
+.post-navigation .nav-previous,
 .comment-navigation .nav-next,
 .paging-navigation .nav-next,
 .post-navigation .nav-next {
-	float: right;
-	text-align: right;
-	width: 50%;
+	text-align: center;
 }
 
 /* === 8.4 Social menu === */
@@ -1298,7 +1293,14 @@ video {
 	.archive .entry-content,
 	.single-post .entry-content,
 	.page-template-default .entry-content,
-	.page-template-pagesfront-page-php .kulkuri-section-blog .entry-content {
+	.page-template-pagesfront-page-php .kulkuri-section-blog .entry-content,
+	.blog .entry-footer,
+	.archive .entry-footer,
+	.single-post .entry-footer,
+	.page-template-default .entry-footer,
+	.page-template-pagesfront-page-php .kulkuri-section-blog .entry-footer,
+	.site-main .post-navigation, 
+	.comments-area {
 		margin-left: auto;
 		margin-right: auto;
 		max-width: 650px;
@@ -1326,7 +1328,8 @@ video {
 	padding-top: 0;
 }
 #colophon {
-	padding: 40px 0;
+	padding-top: 40px;
+	padding-bottom: 40px;
 	text-align: center;
 }
 

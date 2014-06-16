@@ -155,6 +155,16 @@ module.exports = function(grunt) {
 					from: /^.*Tags:.*$/m,
 					to: 'Tags: green, white, light, one-column, fluid-layout, responsive-layout, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, threaded-comments, translation-ready, infinite-scroll, announcement, business, portfolio, bright, clean, light, modern, playful, professional, tech'
 				} ]
+			},
+			themeuri: {
+				src: [
+					'buildwpcom/<%= pkg.name %>/style.css'
+				],
+				overwrite: true,
+				replacements: [ {
+					from: /^.*Theme URI:.*$/m,
+					to: 'Theme URI: http://theme.wordpress.com/themes/kulkuri/'
+				} ]
 			}
 		},
 
@@ -188,6 +198,6 @@ module.exports = function(grunt) {
 	grunt.registerTask( 'default', ['uglify', 'cssmin'] );
 	
 	// Build task(s).
-	grunt.registerTask( 'build', [ 'makepot', 'clean', 'replace:styleVersion', 'replace:functionsVersion', 'copy', 'replace:tags', 'compress' ] );
+	grunt.registerTask( 'build', [ 'makepot', 'clean', 'replace:styleVersion', 'replace:functionsVersion', 'copy', 'replace:tags', 'replace:themeuri', 'compress' ] );
 
 };

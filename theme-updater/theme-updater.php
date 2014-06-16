@@ -4,15 +4,24 @@
  *
  * @package Kulkuri
  */
+ 
+// Includes the files needed for the theme updater
+include( dirname( __FILE__ ) . '/theme-updater-admin.php' );
 
-/**
- * Returns settings required by the theme updater.
- *
- * since 1.0.0
- *
- * @param string $setting
- * @returns string $setting data
- */
+// Loads the theme updater admin class
+$updater = new Kulkuri_Theme_Updater_Admin;
+
+// Defines variables to be used by the theme updater
+$updater->init(
+	array(
+		'remote_api_url' => 'http://localhost/foxnet-themes-shop', // URL of site running EDD
+		'theme_slug'     => 'Kulkuri',                             // The name of this theme
+		'version'        => KULKURI_VERSION,                       // The current version of this theme
+		'author'         => 'Sami Keijonen'                        // The author of this theme
+	)
+);
+
+
 function kulkuri_updater_settings( $setting ) {
 
 	/* URL of site running EDD. */
@@ -33,10 +42,3 @@ function kulkuri_updater_settings( $setting ) {
 
 	return false;
 }
-
-/**
- * Includes functions to create the admin page.
- *
- * since 1.0.0
- */
-include( dirname( __FILE__ ) . '/theme-updater-functions.php' );

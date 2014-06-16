@@ -1,5 +1,6 @@
 <?php
-class EDD_SL_Theme_Updater {
+class Kulkuri_Theme_Updater {
+
 	private $remote_api_url;
 	private $request_data;
 	private $response_key;
@@ -102,7 +103,7 @@ class EDD_SL_Theme_Updater {
 
 			$response = wp_remote_post( $this->remote_api_url, array( 'timeout' => 15, 'sslverify' => false, 'body' => $api_params ) );
 			
-			// make sure the response was successful
+			// Make sure the response was successful
 			if ( is_wp_error( $response ) || 200 != wp_remote_retrieve_response_code( $response ) ) {
 				$failed = true;
 			}
@@ -113,7 +114,7 @@ class EDD_SL_Theme_Updater {
 				$failed = true;
 			}
 			
-			// if the response failed, try again in 30 minutes
+			// If the response failed, try again in 30 minutes
 			if ( $failed ) {
 				$data = new stdClass;
 				$data->new_version = $this->version;

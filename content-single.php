@@ -25,8 +25,8 @@
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
-		<?php kulkuri_post_terms( array( 'taxonomy' => 'category', 'text' => __( 'Posted in %s', 'mina-olen' ) ) ); ?>
-		<?php kulkuri_post_terms( array( 'taxonomy' => 'post_tag', 'text' => __( 'Tagged %s', 'mina-olen' ), 'before' => '<br />' ) ); ?>
+		<?php kulkuri_post_terms( array( 'taxonomy' => 'category', 'text' => __( 'Posted in %s', 'kulkuri' ) ) ); ?>
+		<?php kulkuri_post_terms( array( 'taxonomy' => 'post_tag', 'text' => __( 'Tagged %s', 'kulkuri' ), 'before' => '<br />' ) ); ?>
 	</footer><!-- .entry-footer -->
 
 </article><!-- #post-## -->

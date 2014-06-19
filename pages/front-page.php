@@ -29,7 +29,8 @@ get_header(); ?>
 					'post_status'         => 'publish',
 					'ignore_sticky_posts' => 1,
 					'orderby'             => 'post__in',
-					'order'               => 'asc'
+					'order'               => 'asc',
+					'post_parent'         => 0 // Display only top-level pages.
 				) );
 			
 				/* Set transient (24h) for faster loading. Delete transient on hook 'wp_update_nav_menu' in functions.php file. */
@@ -131,8 +132,8 @@ get_header(); ?>
 									</div><!-- .entry-content -->
 								
 									<footer class="entry-footer">
-										<?php kulkuri_post_terms( array( 'taxonomy' => 'category', 'text' => __( 'Posted in %s', 'mina-olen' ) ) ); ?>
-										<?php kulkuri_post_terms( array( 'taxonomy' => 'post_tag', 'text' => __( 'Tagged %s', 'mina-olen' ), 'before' => '<br />' ) ); ?>
+										<?php kulkuri_post_terms( array( 'taxonomy' => 'category', 'text' => __( 'Posted in %s', 'kulkuri' ) ) ); ?>
+										<?php kulkuri_post_terms( array( 'taxonomy' => 'post_tag', 'text' => __( 'Tagged %s', 'kulkuri' ), 'before' => '<br />' ) ); ?>
 									</footer><!-- .entry-footer -->
 				
 								</div><!-- .wrapper-inner -->

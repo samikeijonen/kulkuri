@@ -40,15 +40,15 @@
 			
 				<div class="site-branding">
 			
-				<?php if ( get_theme_mod( 'logo_upload') ) { // Use logo if is set. Else use bloginfo name. ?>	
+				<?php if ( get_theme_mod( 'logo_upload') ) : // Use logo if is set. Else use bloginfo name. ?>	
 					<h1 id="site-title">
 						<a href="<?php echo esc_url( home_url() ); ?>" rel="home">
 							<img class="kulkuri-logo logo" src="<?php echo esc_url( get_theme_mod( 'logo_upload' ) ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>" />
 						</a>
 					</h1>
-					<?php } else { ?>
+					<?php else: ?>
 					<h1 id="site-title" class="site-title logo"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-					<?php } ?>
+					<?php endif; // End check for logo. ?>
 				
 					<h2 id="site-description" class="site-description"><?php bloginfo( 'description' ); ?></h2>
 				

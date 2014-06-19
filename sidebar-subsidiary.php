@@ -1,6 +1,6 @@
 <?php	
 
-/* When to show header at all. */
+/* When to show subsidiary sidebar at all. */
 $kulkuri_show_sidebar_subsidiary = apply_filters( 'kulkuri_show_sidebar_subsidiary', true );
 	
 if( $kulkuri_show_sidebar_subsidiary ) : // Check do we show sidebar subsidiary.

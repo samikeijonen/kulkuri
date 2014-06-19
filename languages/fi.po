@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Kulkuri 1.0\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/theme/style\n"
-"POT-Creation-Date: 2014-06-17 14:38:17+00:00\n"
-"PO-Revision-Date: 2014-06-17 17:44+0200\n"
+"POT-Creation-Date: 2014-06-19 10:10:28+00:00\n"
+"PO-Revision-Date: 2014-06-19 13:10+0200\n"
 "Last-Translator: Sami Keijonen <sami.keijonen@foxnet.fi>\n"
 "Language-Team: Foxnet Themes <sami.keijonen@foxnet.fi>\n"
 "Language: fi\n"
@@ -183,78 +183,78 @@ msgstr "Artikkelien selaus"
 msgid "Search Results for: %s"
 msgstr "Hakutulokset haulle: %s"
 
-#: theme-updater/theme-updater-admin.php:93
 #: theme-updater/theme-updater-admin.php:94
-#: theme-updater/theme-updater-admin.php:123
+#: theme-updater/theme-updater-admin.php:95
+#: theme-updater/theme-updater-admin.php:124
 msgid "Theme License"
 msgstr "Teeman lisenssiavain"
 
-#: theme-updater/theme-updater-admin.php:113
+#: theme-updater/theme-updater-admin.php:114
 msgid "Enter your theme license key."
 msgstr "Kirjoita teeman lisenssiavain."
 
-#: theme-updater/theme-updater-admin.php:133
+#: theme-updater/theme-updater-admin.php:134
 msgid "License Key"
 msgstr "Lisenssiavain"
 
-#: theme-updater/theme-updater-admin.php:146
+#: theme-updater/theme-updater-admin.php:147
 msgid "License Action"
 msgstr "Lisenssiavaimen aktivointi"
 
-#: theme-updater/theme-updater-admin.php:152
+#: theme-updater/theme-updater-admin.php:153
 msgid "Deactivate License"
 msgstr "Ota lisenssi pois käytöstä"
 
-#: theme-updater/theme-updater-admin.php:154
+#: theme-updater/theme-updater-admin.php:155
 msgid "Activate License"
 msgstr "Aktivoi lisenssiavain"
 
-#: theme-updater/theme-updater-admin.php:322
-#: theme-updater/theme-updater-admin.php:369
+#: theme-updater/theme-updater-admin.php:323
+#: theme-updater/theme-updater-admin.php:370
 msgid "License status is unknown."
 msgstr "Lisenssiavaimen tila on tuntematon."
 
-#: theme-updater/theme-updater-admin.php:330
+#: theme-updater/theme-updater-admin.php:331
 msgid "Renew?"
 msgstr "Uusi lisenssi?"
 
-#: theme-updater/theme-updater-admin.php:339
+#: theme-updater/theme-updater-admin.php:340
 msgid "unlimited"
 msgstr "rajoittamaton"
 
-#: theme-updater/theme-updater-admin.php:343
+#: theme-updater/theme-updater-admin.php:344
 msgid "License key is active."
 msgstr "Lisenssiavain on aktiivinen."
 
-#: theme-updater/theme-updater-admin.php:345
+#: theme-updater/theme-updater-admin.php:346
 msgid "Expires %s."
 msgstr "Vanhenee %s."
 
-#: theme-updater/theme-updater-admin.php:348
+#: theme-updater/theme-updater-admin.php:349
 msgid "You have %1$s / %2$s sites activated."
 msgstr "Sinulla on %1$s / %2$s sivua aktiivisena."
 
-#: theme-updater/theme-updater-admin.php:352
+#: theme-updater/theme-updater-admin.php:353
 msgid "License key expired %s."
 msgstr "Lisenssiavain on vanhentunut %s."
 
-#: theme-updater/theme-updater-admin.php:354
+#: theme-updater/theme-updater-admin.php:355
 msgid "License key has expired."
 msgstr "Lisenssiavain on vanhentunut."
 
-#: theme-updater/theme-updater-admin.php:360
+#: theme-updater/theme-updater-admin.php:361
 msgid "License keys do not match."
 msgstr "Lisenssiavaimet eivät täsmää."
 
-#: theme-updater/theme-updater-admin.php:362
+#: theme-updater/theme-updater-admin.php:363
 msgid "License is inactive."
 msgstr "Lisenssiavain ei ole toiminnassa."
 
-#: theme-updater/theme-updater-admin.php:364
+#: theme-updater/theme-updater-admin.php:365
 msgid "License key is disabled."
 msgstr "Lisenssiavain on poissa käytöstä."
 
-#: theme-updater/theme-updater-admin.php:367
+#: theme-updater/theme-updater-admin.php:368
 msgid "Site is inactive."
 msgstr "Sivusto ei ole aktiivinen."
 

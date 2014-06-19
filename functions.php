@@ -104,7 +104,7 @@ add_action( 'after_setup_theme', 'kulkuri_setup' );
  */
 function kulkuri_add_image_sizes() {
 
-	add_image_size( 'kulkuri-thumbnail', 980, 551, true );
+	add_image_size( 'kulkuri-large', 980, 551, true );
 
 }
 add_action( 'init', 'kulkuri_add_image_sizes' );

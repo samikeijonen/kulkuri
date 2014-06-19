@@ -23,7 +23,8 @@ Kulkuri is great one page theme. You can literally do everything in just one pag
 
 1. Open Sans is licensed under Apache License.
 1. Fixed Nav is licensed under MIT license.
-1. Fixed Nav is licensed under WTFPL license.
+1. FitVids is licensed under WTFPL license.
+1. Genericons is licensed under GPL license.
 
 
 == Frequently Asked Questions ==

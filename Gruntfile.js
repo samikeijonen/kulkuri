@@ -3,22 +3,11 @@ module.exports = function(grunt) {
 	// Load all tasks
 	require( 'load-grunt-tasks' )( grunt );
 
-    // All configuration goes here 
-    grunt.initConfig({
-        pkg: grunt.file.readJSON('package.json'),
-
-        /*concat: {
-            // 2. Configuration for concatinating files goes here.
-			dist: {
-				src: [
-					'js/fitvids/*.js',            // All JS in the fitvids folder
-					//'js/fixed-nav/*.js',        // All JS in the fixed-nav folder
-					'js/customizer.js',           // Customizer JS
-					'js/skip-link-focus-fix.js',  // Skip link JS
-				],
-			dest: 'js/combined.js',
-			}
-        },*/
+	// All configuration goes here 
+	grunt.initConfig({
+	pkg: grunt.file.readJSON('package.json'),
+	
+		// Minify files
 		uglify: {
 			nav: {
 				files: {
@@ -73,7 +62,7 @@ module.exports = function(grunt) {
 			}
 		},
 		
-		// Clean up build directory
+		// Clean up build and buildwpcom directories
 		clean: {
 			main: ['build/<%= pkg.name %>'],
 			mainwpcom: ['buildwpcom/<%= pkg.name %>']

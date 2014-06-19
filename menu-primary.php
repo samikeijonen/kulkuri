@@ -1,4 +1,4 @@
-<?php if ( has_nav_menu( 'primary' ) || has_nav_menu( 'not-primary' )  ) { 
+<?php if ( has_nav_menu( 'primary' ) || has_nav_menu( 'not-primary' )  ) : 
 
 	/* Decide which menu to use. */
 	if( is_page_template( 'pages/front-page.php' ) ) :
@@ -27,4 +27,4 @@
 		</nav><!-- #menu-primary -->
 	</div><!-- #menu-primary-wrapper -->
 
-<?php } ?>
+<?php endif; // End check for menu. ?>

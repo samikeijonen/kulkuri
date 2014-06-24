@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Kulkuri 1.0\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/theme/style\n"
-"POT-Creation-Date: 2014-06-19 10:10:28+00:00\n"
-"PO-Revision-Date: 2014-06-19 13:10+0200\n"
+"POT-Creation-Date: 2014-06-24 10:26:45+00:00\n"
+"PO-Revision-Date: 2014-06-24 13:27+0200\n"
 "Last-Translator: Sami Keijonen <sami.keijonen@foxnet.fi>\n"
 "Language-Team: Foxnet Themes <sami.keijonen@foxnet.fi>\n"
 "Language: fi\n"
@@ -72,51 +72,47 @@ msgstr "Emme valitettavasti löytäneet etsimääsi. Ehkä hakutoiminnosta on ap
 msgid "Pages:"
 msgstr "Sivut:"
 
-#: content-single.php:28 content.php:26 pages/front-page.php:134
+#: content-single.php:28 content.php:26 pages/front-page.php:128
 msgid "Posted in %s"
 msgstr "Artikkeli kategoriassa %s"
 
-#: content-single.php:29 content.php:27 pages/front-page.php:135
+#: content-single.php:29 content.php:27 pages/front-page.php:129
 msgid "Tagged %s"
 msgstr "Avainsanat %s"
 
-#: functions.php:72
-msgid "Front Page Menu"
-msgstr "Etusivun valikko"
+#: functions.php:72 menu-primary.php:6
+msgid "Primary Menu"
+msgstr "Päävalikko"
 
 #: functions.php:73
-msgid "Not Front Page Menu"
-msgstr "Muiden sivujen valikko"
-
-#: functions.php:74
 msgid "Social Menu"
 msgstr "Somevalikko"
 
-#: functions.php:122
+#: functions.php:121
 msgid "A sidebar located in the footer of the site."
 msgstr "Sivupalkki sijaitsee alapalkissa."
 
-#: functions.php:153 functions.php:166
+#: functions.php:155 functions.php:168 menu-primary.php:4
 msgid "Menu"
 msgstr "Valikko"
 
-#: functions.php:295
+#: functions.php:266
 msgid "http://wordpress.org/"
 msgstr "http://wordpress.org/"
 
-#: functions.php:295
+#: functions.php:266
 msgid "A Semantic Personal Publishing Platform"
 msgstr "Semanttinen, henkilökohtainen julkaisualusta"
 
-#: functions.php:295
+#: functions.php:266
 msgid "Proudly powered by %s"
 msgstr "Voimanlähteenä %s"
 
-#: functions.php:296
+#: functions.php:267
 msgid "&middot;"
 msgstr "&middot;"
 
-#: functions.php:297
+#: functions.php:268
 msgid "Theme: %1$s by %2$s."
 msgstr "Teema: %1$s tekijä %2$s."
 
@@ -140,19 +136,19 @@ msgstr "Callout URL-linkki"
 msgid "Callout URL text"
 msgstr "Callout URL-linkin teksti"
 
-#: inc/customizer.php:124
+#: inc/customizer.php:122
 msgid "Background color %s"
 msgstr "Taustaväri %s"
 
-#: inc/customizer.php:146
+#: inc/customizer.php:144
 msgid "Background image %s"
 msgstr "Taustakuva %s"
 
-#: inc/customizer.php:173
+#: inc/customizer.php:171
 msgid "Show latest posts on front page"
 msgstr "Näytä viimeisimmät artikkelit etusivulla"
 
-#: inc/customizer.php:197
+#: inc/customizer.php:195
 msgid "Upload custom logo."
 msgstr "Lataa logo."
 
@@ -178,6 +174,10 @@ msgstr ""
 #: inc/template-tags.php:52
 msgid "Post navigation"
 msgstr "Artikkelien selaus"
+
+#: menu-primary.php:18
+msgid "Home"
+msgstr "Etusivu"
 
 #: search.php:16
 msgid "Search Results for: %s"
@@ -313,7 +313,7 @@ msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
 msgstr[0] "Yksi kommentti: &ldquo;%2$s&rdquo;"
 msgstr[1] "%1$s kommenttia: &ldquo;%2$s&rdquo;"
 
-#: functions.php:121
+#: functions.php:120
 msgctxt "sidebar"
 msgid "Subsidiary"
 msgstr "Alapalkin vimpainalue"
@@ -333,3 +333,8 @@ msgstr "%title <span class=\"screen-reader-text meta-nav\">&rarr;</span>"
 msgctxt "taxonomy terms separator"
 msgid ", "
 msgstr ", "
+
+#: sidebar-subsidiary.php:10
+msgctxt "Sidebar aria label"
+msgid "Subsidiary Sidebar"
+msgstr "Alapalkin sivupalkki"

@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Kulkuri 1.0.0\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/theme/style\n"
-"POT-Creation-Date: 2014-06-24 10:27:50+00:00\n"
+"POT-Creation-Date: 2014-06-24 11:44:47+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -126,19 +126,19 @@ msgstr ""
 msgid "Callout URL text"
 msgstr ""
 
-#: inc/customizer.php:122
+#: inc/customizer.php:121
 msgid "Background color %s"
 msgstr ""
 
-#: inc/customizer.php:144
+#: inc/customizer.php:143
 msgid "Background image %s"
 msgstr ""
 
-#: inc/customizer.php:171
+#: inc/customizer.php:170
 msgid "Show latest posts on front page"
 msgstr ""
 
-#: inc/customizer.php:195
+#: inc/customizer.php:194
 msgid "Upload custom logo."
 msgstr ""
 

@@ -679,7 +679,9 @@ a.more-link::after {
 	text-align: center;
 }
 .nav-collapse li a,
-a.nav-toggle {
+button.nav-toggle {
+	margin: 0;
+	border-radius: 0;
 	text-align: center;
 	text-decoration: none;
 }
@@ -709,6 +711,19 @@ a.nav-toggle {
 	opacity: 1;
 }
 
+#menu-primary li:hover > a,
+#menu-primary li.focus > a,
+button#nav-toggle:hover,
+button#nav-toggle:focus,
+button#nav-toggle.focus,
+#menu-primary li.current-menu-item,
+#menu-primary li.current-menu-item > a,
+#menu-primary li.active > a,
+#menu-primary li:focus > a {
+	background-color: #7cb354;
+	color: #fff;
+}
+
 @media screen and (max-width: 782px) {
 
 	.nav-collapse ul {
@@ -722,7 +737,7 @@ a.nav-toggle {
 	}
 
 	.nav-collapse li a,
-	a.nav-toggle {
+	button.nav-toggle {
 		background: #fff;
 		border-bottom: 1px solid #89c264;
 		color: #89c264;
@@ -730,16 +745,16 @@ a.nav-toggle {
 		padding: .5em 4%;
 		width: 100%;
 	}
-	a.nav-toggle {
+	button.nav-toggle {
 		padding: 0 4%;
 		height: 55px;
 		line-height: 55px;
 	}
 	.nav-collapse li:last-child a,
-	a.nav-toggle {
+	button.nav-toggle {
 		border-bottom: none;
 	}
-	a.nav-toggle.active {
+	button.nav-toggle.active {
 		border-bottom: 1px solid #89c264;
 	}
 
@@ -779,7 +794,7 @@ a.nav-toggle {
 		-o-user-select: none;
 		user-select: none;
 	}
-	a.nav-toggle:before {
+	button.nav-toggle:before {
 		-webkit-font-smoothing: antialiased;
 		content: '\f419';
 		display: inline-block;
@@ -789,7 +804,7 @@ a.nav-toggle {
 		width: 32px;
 		height: 32px;
 	}
-	a.nav-toggle.active:before {
+	button.nav-toggle.active:before {
 		content: '\f405';
 		font-size: 36px;
 		height: 36px;
@@ -835,12 +850,6 @@ a.nav-toggle {
 		display: inline-block;
 		padding: 0 12px;
 		white-space: nowrap;
-	}
-
-	#menu-primary li.active > a,
-	#menu-primary li:focus > a {
-		background-color: #7cb354;
-		color: #fff;
 	}
 
 }

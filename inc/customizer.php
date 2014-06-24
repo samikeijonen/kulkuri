@@ -93,19 +93,16 @@ function kulkuri_customize_register_settings( $wp_customize ) {
  		)
 	);
 	
-	/* Get post IDs from primary menu and count them. */
-	if ( has_nav_menu( 'primary' ) ) {
-		$kulkuri_post_ids = kulkuri_get_posts_for_menu( 'primary' );
-		$kulkuri_how_many_pages = count( $kulkuri_post_ids );
-	}
+	/* Loop background color and image settings. */
 	
-	/* Loop background color and image settings if there are selected pages in primary menu. */
-	if ( !empty( $kulkuri_post_ids ) && $kulkuri_how_many_pages > 0 ) :
+	$kulkuri_how_many_pages = absint( apply_filters( 'kulkuri_how_many_pages', 9 ) );
+	
+	if ( $kulkuri_how_many_pages > 0 ) :
 	
 		/* Loop same setting couple of times. */
 		$k = 1;
 	
-		while( $k < absint( apply_filters( 'kulkuri_how_many_pages', $kulkuri_how_many_pages ) ) ) :
+		while( $k <  $kulkuri_how_many_pages ) :
 			
 			/* Add the 'background_color' setting. */
 			$wp_customize->add_setting(
@@ -155,7 +152,7 @@ function kulkuri_customize_register_settings( $wp_customize ) {
 		
 		endwhile; // End while loop.
 	
-	endif; // End check for primary menu items.
+	endif; // End check for front page menu items.
 	
 	/* Add the show latest posts setting. */
 	$wp_customize->add_setting(

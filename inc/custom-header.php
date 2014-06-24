@@ -84,7 +84,7 @@ function kulkuri_header_style() {
 	}
 	
 	echo "\n" . '<style type="text/css" id="custom-header-css">' . trim( $style ) . '</style>' . "\n";
-		
+	
 }
 endif; // kulkuri_header_style
 

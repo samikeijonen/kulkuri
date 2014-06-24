@@ -2,9 +2,9 @@
     var navigation = responsiveNav(".nav-collapse", { // Selector
         animate: true, // Boolean: Use CSS3 transitions, true or false
         transition: 284, // Integer: Speed of the transition, in milliseconds
-        label: kulkuri_script_vars_2.menu_2, // String: Label for the navigation toggle
+        //label: kulkuri_script_vars_2.menu_2, // String: Label for the navigation toggle
         insert: "before", // String: Insert the toggle before or after the navigation
-        //customToggle: ".menu-toggle", // Selector: Specify the ID of a custom toggle
+        customToggle: "#nav-toggle", // Selector: Specify the ID of a custom toggle
         closeOnNavClick: true, // Boolean: Close the navigation when one of the links are clicked
         openPos: "relative", // String: Position of the opened nav, relative or static
         navClass: "nav-collapse", // String: Default CSS class. If changed, you need to edit the CSS too!

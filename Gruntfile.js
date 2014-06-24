@@ -33,6 +33,11 @@ module.exports = function(grunt) {
 				files:{
 					'js/customizer.min.js': ['js/customizer.js']
 				}
+			},
+			functions: {
+				files:{
+					'js/functions.min.js': ['js/functions.js']
+				}
 			}
 		},
 		cssmin : {

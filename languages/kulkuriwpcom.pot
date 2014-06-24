@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Kulkuri 1.0.0\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/theme/style\n"
-"POT-Creation-Date: 2014-06-19 13:14:44+00:00\n"
+"POT-Creation-Date: 2014-06-24 10:27:50+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -62,51 +62,47 @@ msgstr ""
 msgid "Pages:"
 msgstr ""
 
-#: content-single.php:28 content.php:26 pages/front-page.php:135
+#: content-single.php:28 content.php:26 pages/front-page.php:128
 msgid "Posted in %s"
 msgstr ""
 
-#: content-single.php:29 content.php:27 pages/front-page.php:136
+#: content-single.php:29 content.php:27 pages/front-page.php:129
 msgid "Tagged %s"
 msgstr ""
 
-#: functions.php:72
-msgid "Front Page Menu"
+#: functions.php:72 menu-primary.php:6
+msgid "Primary Menu"
 msgstr ""
 
 #: functions.php:73
-msgid "Not Front Page Menu"
-msgstr ""
-
-#: functions.php:74
 msgid "Social Menu"
 msgstr ""
 
-#: functions.php:122
+#: functions.php:121
 msgid "A sidebar located in the footer of the site."
 msgstr ""
 
-#: functions.php:153 functions.php:166
+#: functions.php:155 functions.php:168 menu-primary.php:4
 msgid "Menu"
 msgstr ""
 
-#: functions.php:295
+#: functions.php:266
 msgid "http://wordpress.org/"
 msgstr ""
 
-#: functions.php:295
+#: functions.php:266
 msgid "A Semantic Personal Publishing Platform"
 msgstr ""
 
-#: functions.php:295
+#: functions.php:266
 msgid "Proudly powered by %s"
 msgstr ""
 
-#: functions.php:296
+#: functions.php:267
 msgid "&middot;"
 msgstr ""
 
-#: functions.php:297
+#: functions.php:268
 msgid "Theme: %1$s by %2$s."
 msgstr ""
 
@@ -130,19 +126,19 @@ msgstr ""
 msgid "Callout URL text"
 msgstr ""
 
-#: inc/customizer.php:124
+#: inc/customizer.php:122
 msgid "Background color %s"
 msgstr ""
 
-#: inc/customizer.php:146
+#: inc/customizer.php:144
 msgid "Background image %s"
 msgstr ""
 
-#: inc/customizer.php:173
+#: inc/customizer.php:171
 msgid "Show latest posts on front page"
 msgstr ""
 
-#: inc/customizer.php:197
+#: inc/customizer.php:195
 msgid "Upload custom logo."
 msgstr ""
 
@@ -164,6 +160,10 @@ msgstr ""
 
 #: inc/template-tags.php:52
 msgid "Post navigation"
+msgstr ""
+
+#: menu-primary.php:18
+msgid "Home"
 msgstr ""
 
 #: search.php:16
@@ -203,7 +203,7 @@ msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
 msgstr[0] ""
 msgstr[1] ""
 
-#: functions.php:121
+#: functions.php:120
 msgctxt "sidebar"
 msgid "Subsidiary"
 msgstr ""
@@ -222,4 +222,9 @@ msgstr ""
 #. Translators: Separates tags, categories, etc. when displaying a post.
 msgctxt "taxonomy terms separator"
 msgid ", "
+msgstr ""
+
+#: sidebar-subsidiary.php:10
+msgctxt "Sidebar aria label"
+msgid "Subsidiary Sidebar"
 msgstr ""

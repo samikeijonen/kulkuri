@@ -69,8 +69,7 @@ function kulkuri_setup() {
 
 	/* This theme uses wp_nav_menu() in 3 locations. */
 	register_nav_menus( array(
-		'primary'     => __( 'Front Page Menu', 'kulkuri' ),
-		'not-primary' => __( 'Not Front Page Menu', 'kulkuri' ),
+		'primary'     => __( 'Primary Menu', 'kulkuri' ),
 		'social'      => __( 'Social Menu', 'kulkuri' )
 	) );
 
@@ -145,6 +144,9 @@ function kulkuri_scripts() {
 	/* Enqueue responsive fixed navigation. */
 	wp_enqueue_script( 'kulkuri-navigation', trailingslashit( get_template_directory_uri() ) . 'js/fixed-nav/responsive-nav' . KULKURI_SUFFIX . '.js', array(), KULKURI_VERSION, false );
 	
+	/* Enqueue functions. */
+	wp_enqueue_script( 'kulkuri-script', trailingslashit( get_template_directory_uri() ) . 'js/functions' . KULKURI_SUFFIX . '.js', array( 'jquery' ), KULKURI_VERSION, false );
+	
 	/* Enqueue responsive navigation settings for other than front page. */
 	if( ! is_page_template( 'pages/front-page.php' ) ) {
 		wp_enqueue_script( 'kulkuri-navigation-settings', trailingslashit( get_template_directory_uri() ) . 'js/fixed-nav/responsive-nav-settings' . KULKURI_SUFFIX . '.js', array( 'kulkuri-navigation' ), KULKURI_VERSION, true );
@@ -189,37 +191,6 @@ function kulkuri_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'kulkuri_scripts' );
-
-/**
- * Filter menu href attributes for page scrolling in primary menu.
- *
- * @since 1.0.0
- * @return array $atts
- */
-function kulkuri_nav_menu_link_attributes( $atts, $item, $args ) {
-	
-	if( 'post_type' == $item->type && 'page' == $item->object && 'primary' == $args->theme_location ) {
-		$kulkuri_page_slug = get_post( $item->object_id );
-		$atts['href'] = '#' . $kulkuri_page_slug->post_name;
-	}
-
-	return $atts;
-}
-add_filter( 'nav_menu_link_attributes', 'kulkuri_nav_menu_link_attributes', 100, 3 );
-
-/**
- * Add data-scroll to primary menu anchor so that scroll is working.
- *
- * @since 1.0.0
- * @return string modified menu
- */
-function kulkuri_menu_data_scroll( $menu, $args ) {
-	if( 'primary' == $args->theme_location ) {
-		$menu = str_replace( 'href=', 'data-scroll href=', $menu );
-	}
-	return $menu;
-}
-add_filter( 'wp_nav_menu_items','kulkuri_menu_data_scroll', 10, 2 );
 
 /**
  * Counts widgets number in subsidiary sidebar and ads css class (.sidebar-subsidiary-$number) to body_class.
@@ -376,6 +347,30 @@ function kulkuri_get_posts_for_menu( $menu_name ) {
 }
 
 /**
+ * Get all child ids from wanted page.
+ *
+ * @since   1.0.0
+*/
+function kulkuri_get_child_page_ids( $id ) {
+
+	/* Grab all of the child pages of wanted page. */
+	$kulkuri_page_child_ids = array();
+	$kulkuri_pages = get_pages( apply_filters( 'kulkuri_front_page_child_args',
+		array(
+			'child_of'    => $id,
+			'sort_column' => 'menu_order' 
+		)
+	) );
+			
+	foreach( $kulkuri_pages as $page ) {
+		$kulkuri_page_child_ids[] = $page->ID;
+	}
+
+	return $kulkuri_page_child_ids;
+
+}
+
+/**
  * Flush out the transients used in front page WP Queries.
  *
  * @since   1.0.0
@@ -384,7 +379,6 @@ function kulkuri_transient_flusher() {
 	delete_transient( 'kulkuri_section_query' );
 	delete_transient( 'kulkuri_posts' );
 }
-add_action( 'wp_update_nav_menu', 'kulkuri_transient_flusher' );
 add_action( 'save_post', 'kulkuri_transient_flusher' );
 
 /**

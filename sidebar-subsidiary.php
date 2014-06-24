@@ -7,7 +7,7 @@ if( $kulkuri_show_sidebar_subsidiary ) : // Check do we show sidebar subsidiary.
 
 	if ( is_active_sidebar( 'subsidiary' ) ) : ?>
 
-		<aside id="sidebar-subsidiary" class="sidebar" role="complementary">
+		<aside id="sidebar-subsidiary" class="sidebar" role="complementary" aria-label="<?php echo _x( 'Subsidiary Sidebar', 'Sidebar aria label', 'kulkuri' ); ?>">
 		
 			<div class="wrap">
 				<div class="wrap-inside">

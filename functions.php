@@ -291,25 +291,6 @@ function kulkuri_post_image_html( $html, $post_id, $post_image_id ) {
 }
 add_filter( 'post_thumbnail_html', 'kulkuri_post_image_html', 10, 3 );
 
-/*
- * Add Footer info.
- *
- * @since  1.0.0
- * @return html.
- */
-function kulkuri_footer_info() { ?>
-
-	<footer id="colophon" class="site-footer" role="contentinfo">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'kulkuri' ) ); ?>" title="<?php esc_attr_e( 'A Semantic Personal Publishing Platform', 'kulkuri' ); ?>"><?php printf( __( 'Proudly powered by %s', 'kulkuri' ), 'WordPress' ); ?></a>
-			<span class="sep"> <?php esc_attr_e( '&middot;', 'kulkuri' ); ?></span>
-			<?php printf( __( 'Theme: %1$s by %2$s.', 'kulkuri' ), 'kulkuri', '<a href="https://foxnet-themes.fi" rel="designer">Foxnet Themes</a>' ); ?>
-		</div><!-- .site-info -->
-	</footer><!-- #colophon --> <?php
-	
-}
-add_action( 'wp_footer', 'kulkuri_footer_info' );
-
 /**
  * Callback function for adding editor styles. Use along with the add_editor_style() function.
  *

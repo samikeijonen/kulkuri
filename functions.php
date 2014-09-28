@@ -8,7 +8,7 @@
 /**
  * The current version of the theme.
  */
-define( 'KULKURI_VERSION', '1.0.0' );
+define( 'KULKURI_VERSION', '1.1.0' );
 
 if ( ! function_exists( 'kulkuri_is_wpcom' ) ) :
 /**
@@ -92,6 +92,11 @@ function kulkuri_setup() {
 	/* Add Editor styles. */
 	add_editor_style( kulkuri_get_editor_styles() );
 	
+	/* Add FluidVid JS when oEmbeds are around. */
+	add_filter( 'wp_video_shortcode', 'kulkuri_fluidvids' );
+	add_filter( 'embed_oembed_html', 'kulkuri_fluidvids' );
+	add_filter( 'video_embed_html', 'kulkuri_fluidvids' );
+	
 }
 endif; // kulkuri_setup
 add_action( 'after_setup_theme', 'kulkuri_setup' );
@@ -132,20 +137,56 @@ function kulkuri_widgets_init() {
 add_action( 'widgets_init', 'kulkuri_widgets_init' );
 
 /**
+ * Return the Google font stylesheet URL
+ *
+ * @since 1.1.0
+ */
+function kulkuri_fonts_url() {
+
+	$fonts_url = '';
+
+	/* Translators: If there are characters in your language that are not
+	 * supported by Open Sans, translate this to 'off'. Do not translate
+	 * into your own language.
+	 */
+	$open_sans = _x( 'on', 'Open Sans font: on or off', 'kulkuri' );
+
+	if ( 'off' !== $open_sans ) {
+		$font_families = array();
+
+		if ( 'off' !== $open_sans )
+			$font_families[] = 'Open Sans:300,400,600,700';
+
+		$query_args = array(
+			'family' => urlencode( implode( '|', $font_families ) ),
+			'subset' => urlencode( 'latin,latin-ext' ),
+		);
+		$fonts_url = add_query_arg( $query_args, "//fonts.googleapis.com/css" );
+	}
+
+	return $fonts_url;
+}
+
+/**
  * Enqueue scripts and styles.
  *
  * @since 1.0.0
  */
 function kulkuri_scripts() {
 
-	/* Enqueue styles. */
-	wp_enqueue_style( 'kulkuri-style', get_stylesheet_uri(), array(), KULKURI_VERSION );
+	/* Enqueue parent theme styles. */
+	wp_enqueue_style( 'kulkuri-style', trailingslashit( get_template_directory_uri() ) . 'style' . KULKURI_SUFFIX . '.css', array(), KULKURI_VERSION );
+
+	/* Enqueue child theme styles. */
+	if ( is_child_theme() ) {
+		wp_enqueue_style( 'kulkuri-child-style', get_stylesheet_uri(), array(), null );
+	}
 		
 	/* Enqueue responsive fixed navigation. */
 	wp_enqueue_script( 'kulkuri-navigation', trailingslashit( get_template_directory_uri() ) . 'js/fixed-nav/responsive-nav' . KULKURI_SUFFIX . '.js', array(), KULKURI_VERSION, false );
 	
 	/* Enqueue functions. */
-	wp_enqueue_script( 'kulkuri-script', trailingslashit( get_template_directory_uri() ) . 'js/functions' . KULKURI_SUFFIX . '.js', array( 'jquery' ), KULKURI_VERSION, false );
+	wp_enqueue_script( 'kulkuri-script', trailingslashit( get_template_directory_uri() ) . 'js/functions' . KULKURI_SUFFIX . '.js', array(), KULKURI_VERSION, true );
 	
 	/* Enqueue responsive navigation settings for other than front page. */
 	if( ! is_page_template( 'pages/front-page.php' ) ) {
@@ -170,17 +211,14 @@ function kulkuri_scripts() {
 		);
 	}
 	
-	/* Enqueue Fitvids. */
-	wp_enqueue_script( 'kulkuri-fitvids', trailingslashit( get_template_directory_uri() ) . 'js/fitvids/fitvids' . KULKURI_SUFFIX . '.js', array( 'jquery' ), KULKURI_VERSION, false );
+	/* Register Fluidvids. */
+	wp_register_script( 'kulkuri-fluidvids', trailingslashit( get_template_directory_uri() ) . 'js/fluidvids/fluidvids' . KULKURI_SUFFIX . '.js', array(), KULKURI_VERSION, true );
 	
-	/* Fitvids settings. */
-	wp_enqueue_script( 'kulkuri-fitvids-settings', trailingslashit( get_template_directory_uri() ) . 'js/fitvids/settings' . KULKURI_SUFFIX . '.js', array( 'kulkuri-fitvids' ), KULKURI_VERSION, true );
-		
-	/* Enqueue skip link fix. */
-	wp_enqueue_script( 'kulkuri-skip-link-focus-fix', trailingslashit( get_template_directory_uri() ) . 'js/skip-link-focus-fix' . KULKURI_SUFFIX . '.js', array(), KULKURI_VERSION, true );
+	/* Register Fluidvids settings. */
+	wp_register_script( 'kulkuri-fluidvids-settings', trailingslashit( get_template_directory_uri() ) . 'js/fluidvids/settings' . KULKURI_SUFFIX . '.js', array( 'kulkuri-fluidvids' ), KULKURI_VERSION, true );
 	
 	/* Enqueue fonts. */
-	wp_enqueue_style( 'kulkuri-fonts', '//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700' );
+	wp_enqueue_style( 'kulkuri-fonts', kulkuri_fonts_url(), array(), null );
 	
 	/* Add Genericons font, used in the main stylesheet. */
 	wp_enqueue_style( 'genericons', trailingslashit( get_template_directory_uri() ) . 'fonts/genericons/genericons' . KULKURI_SUFFIX . '.css', array(), '3.0.3' );
@@ -289,13 +327,11 @@ function kulkuri_get_editor_styles() {
 	/* Add Genericons styles. */
 	$editor_styles[] = 'fonts/genericons/genericons.css';
 
-	/* Add the theme's editor styles. */
-	$editor_styles[] = trailingslashit( get_template_directory_uri() ) . 'css/editor-style.css';
-
-	/* If a child theme, add its editor styles. Note: WP checks whether the file exists before using it. */
-	if ( is_child_theme() && file_exists( trailingslashit( get_stylesheet_directory() ) . 'css/editor-style.css' ) ) {
-		$editor_styles[] = trailingslashit( get_stylesheet_directory_uri() ) . 'css/editor-style.css';
-	}
+	/* Add the theme's editor styles. This also checks child theme's css/editor-style.css file. */
+	$editor_styles[] = 'css/editor-style.css';
+	
+	/* Add theme fonts. */
+	$editor_styles[] = kulkuri_fonts_url();
 
 	/* Add the locale stylesheet. */
 	$editor_styles[] = get_locale_stylesheet_uri();
@@ -367,6 +403,31 @@ function kulkuri_get_child_page_ids( $id ) {
 	}
 
 	return $kulkuri_page_child_ids;
+
+}
+
+/**
+ * Add JS when oEmbeds are around to make them responsive.
+ *
+ * @since  1.1.0
+ * @access public
+ * @return void
+ */
+function kulkuri_fluidvids( $html ) {
+		
+	/* Return if empty. */
+	if ( empty( $html ) || ! is_string( $html ) ) {
+		return $html;
+	}
+		
+	/* Enqueue the JS file if Fluidvids plugin isn't doing it. has_action function doesn't seem to work in this case. */
+	if ( ! wp_script_is( 'fluidvids', 'enqueued' ) ) {
+		wp_enqueue_script( 'kulkuri-fluidvids' );
+		wp_enqueue_script( 'kulkuri-fluidvids-settings' );
+	}
+	
+	/* Return html. */
+	return $html;	
 
 }
 

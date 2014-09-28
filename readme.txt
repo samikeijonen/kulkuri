@@ -35,6 +35,16 @@ I needed this theme and someone else might need it too.
 
 == Changelog ==
 
+= Version 1.1.0 =
+
+* Update fixed responsive nav.
+* Better google fonts loading.
+* Remote updater URI to foxland.fi.
+* Update language files.
+* Tab support for dropdown menus using vanilla JS.
+* Replace Fitvids with Fluidvids.
+* Add hook 'kulkuri_front_page_after_all_sections'.
+
 = Version 1.0.0 =
 
 * Initial release

@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Kulkuri 1.0\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/theme/style\n"
-"POT-Creation-Date: 2014-09-28 09:48:27+00:00\n"
-"PO-Revision-Date: 2014-09-28 12:49+0200\n"
+"POT-Creation-Date: 2014-09-28 10:16:50+00:00\n"
+"PO-Revision-Date: 2014-09-28 13:17+0200\n"
 "Last-Translator: Sami Keijonen <sami.keijonen@foxnet.fi>\n"
 "Language-Team: Foxnet Themes <sami.keijonen@foxnet.fi>\n"
 "Language: fi\n"
@@ -80,6 +80,26 @@ msgstr "Artikkeli kategoriassa %s"
 msgid "Tagged %s"
 msgstr "Avainsanat %s"
 
+#: footer.php:20
+msgid "http://wordpress.org/"
+msgstr "http://wordpress.org/"
+
+#: footer.php:20
+msgid "A Semantic Personal Publishing Platform"
+msgstr "Semanttinen, henkilökohtainen julkaisualusta"
+
+#: footer.php:20
+msgid "Proudly powered by %s"
+msgstr "Voimanlähteenä %s"
+
+#: footer.php:21
+msgid "&middot;"
+msgstr "&middot;"
+
+#: footer.php:22
+msgid "Theme: %1$s by %2$s."
+msgstr "Teema: %1$s tekijä %2$s."
+
 #: functions.php:72 menu-primary.php:6
 msgid "Primary Menu"
 msgstr "Päävalikko"
@@ -95,26 +115,6 @@ msgstr "Sivupalkki sijaitsee alapalkissa."
 #: functions.php:196 functions.php:209 menu-primary.php:4
 msgid "Menu"
 msgstr "Valikko"
-
-#: functions.php:304
-msgid "http://wordpress.org/"
-msgstr "http://wordpress.org/"
-
-#: functions.php:304
-msgid "A Semantic Personal Publishing Platform"
-msgstr "Semanttinen, henkilökohtainen julkaisualusta"
-
-#: functions.php:304
-msgid "Proudly powered by %s"
-msgstr "Voimanlähteenä %s"
-
-#: functions.php:305
-msgid "&middot;"
-msgstr "&middot;"
-
-#: functions.php:306
-msgid "Theme: %1$s by %2$s."
-msgstr "Teema: %1$s tekijä %2$s."
 
 #: header.php:24
 msgid "Skip to content"

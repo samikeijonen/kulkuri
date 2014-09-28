@@ -18,15 +18,10 @@ module.exports = function(grunt) {
 					'js/fixed-nav/responsive-nav-settings.min.js': ['js/fixed-nav/responsive-nav-settings.js']
 				}
 			},
-			fitvids: {
+			fluidvids: {
 				files: {
-					'js/fitvids/fitvids.min.js': ['js/fitvids/fitvids.js'],
-					'js/fitvids/settings.min.js': ['js/fitvids/settings.js']
-				}
-			},
-			theme: {
-				files: {
-					'js/skip-link-focus-fix.min.js': ['js/skip-link-focus-fix.js']
+					'js/fluidvids/fluidvids.min.js': ['js/fluidvids/fluidvids.js'],
+					'js/fluidvids/settings.min.js': ['js/fitvids/settings.js']
 				}
 			},
 			customizer: {

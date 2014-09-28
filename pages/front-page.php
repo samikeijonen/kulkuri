@@ -87,6 +87,8 @@ get_header(); ?>
 			<?php endif; wp_reset_postdata(); // reset query. ?>
 			
 		<?php endif; // End check for post IDs.
+		
+		do_action( 'kulkuri_front_page_after_all_sections' ); // Add hook 'kulkuri_front_page_after_all_sections' where we can filter new stuff.
 			
 		/* Add latest posts if user wants it. */
 			

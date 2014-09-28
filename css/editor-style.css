@@ -1,11 +1,9 @@
-/* Import themes styles. */
-@import url( '../style.css' );
-@import url( '//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700' );
+/* Import theme styles. */
+@import url( '../style.min.css' );
 
 /* Styles specific to the editor. */
 
 body#tinymce {
-	margin: 0 auto;
-	padding: 16px 3%;
+	margin: 16px 3%;
 	border: none;
 }

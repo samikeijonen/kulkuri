@@ -2,9 +2,9 @@
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Kulkuri 1.1.0\n"
+"Project-Id-Version: Kulkuri 1.1.1\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/theme/style\n"
-"POT-Creation-Date: 2014-09-28 10:17:50+00:00\n"
+"POT-Creation-Date: 2014-10-05 11:46:40+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -102,10 +102,6 @@ msgstr ""
 msgid "A sidebar located in the footer of the site."
 msgstr ""
 
-#: functions.php:196 functions.php:209 menu-primary.php:4
-msgid "Menu"
-msgstr ""
-
 #: header.php:24
 msgid "Skip to content"
 msgstr ""
@@ -160,6 +156,10 @@ msgstr ""
 
 #: inc/template-tags.php:52
 msgid "Post navigation"
+msgstr ""
+
+#: menu-primary.php:4
+msgid "Menu"
 msgstr ""
 
 #: menu-primary.php:18

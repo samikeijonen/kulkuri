@@ -8,7 +8,7 @@
 /**
  * The current version of the theme.
  */
-define( 'KULKURI_VERSION', '1.1.0' );
+define( 'KULKURI_VERSION', '1.1.1' );
 
 if ( ! function_exists( 'kulkuri_is_wpcom' ) ) :
 /**
@@ -191,11 +191,6 @@ function kulkuri_scripts() {
 	/* Enqueue responsive navigation settings for other than front page. */
 	if( ! is_page_template( 'pages/front-page.php' ) ) {
 		wp_enqueue_script( 'kulkuri-navigation-settings', trailingslashit( get_template_directory_uri() ) . 'js/fixed-nav/responsive-nav-settings' . KULKURI_SUFFIX . '.js', array( 'kulkuri-navigation' ), KULKURI_VERSION, true );
-		
-		wp_localize_script( 'kulkuri-navigation-settings', 'kulkuri_script_vars_2', array(
-		'menu_2' => __( 'Menu', 'kulkuri' )
-			)
-		);
 	}
 	
 	/* And all the files we need with responsive fixed navigation. */
@@ -203,12 +198,6 @@ function kulkuri_scripts() {
 		wp_enqueue_script( 'kulkuri-navigation-fastclick', trailingslashit( get_template_directory_uri() ) . 'js/fixed-nav/fastclick' . KULKURI_SUFFIX . '.js', array( 'kulkuri-navigation' ), KULKURI_VERSION, true );
 		wp_enqueue_script( 'kulkuri-navigation-scroll', trailingslashit( get_template_directory_uri() ) . 'js/fixed-nav/scroll' . KULKURI_SUFFIX . '.js', array( 'kulkuri-navigation' ), KULKURI_VERSION, true );
 		wp_enqueue_script( 'kulkuri-navigation-fixed', trailingslashit( get_template_directory_uri() ) . 'js/fixed-nav/fixed-responsive-nav' . KULKURI_SUFFIX . '.js', array( 'kulkuri-navigation', 'kulkuri-navigation-fastclick', 'kulkuri-navigation-scroll' ), KULKURI_VERSION, true );
-	
-		/* Menu label text for both files. */
-		wp_localize_script( 'kulkuri-navigation-fixed', 'kulkuri_script_vars_1', array(
-		'menu_1' => __( 'Menu', 'kulkuri' )
-			) 
-		);
 	}
 	
 	/* Register Fluidvids. */
@@ -221,7 +210,7 @@ function kulkuri_scripts() {
 	wp_enqueue_style( 'kulkuri-fonts', kulkuri_fonts_url(), array(), null );
 	
 	/* Add Genericons font, used in the main stylesheet. */
-	wp_enqueue_style( 'genericons', trailingslashit( get_template_directory_uri() ) . 'fonts/genericons/genericons' . KULKURI_SUFFIX . '.css', array(), '3.0.3' );
+	wp_enqueue_style( 'genericons', trailingslashit( get_template_directory_uri() ) . 'fonts/genericons/genericons/genericons' . KULKURI_SUFFIX . '.css', array(), '3.1' );
 	
 	/* Enqueue comment reply. */
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {

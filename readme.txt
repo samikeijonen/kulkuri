@@ -39,6 +39,7 @@ I needed this theme and someone else might need it too.
 
 * Fix responsive nav settings.
 * Fix Genericons folder and compress CSS.
+* Update Genericons to version 3.2.
 
 = Version 1.1.0 =
 

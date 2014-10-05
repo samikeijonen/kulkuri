@@ -210,7 +210,7 @@ function kulkuri_scripts() {
 	wp_enqueue_style( 'kulkuri-fonts', kulkuri_fonts_url(), array(), null );
 	
 	/* Add Genericons font, used in the main stylesheet. */
-	wp_enqueue_style( 'genericons', trailingslashit( get_template_directory_uri() ) . 'fonts/genericons/genericons/genericons' . KULKURI_SUFFIX . '.css', array(), '3.1' );
+	wp_enqueue_style( 'genericons', trailingslashit( get_template_directory_uri() ) . 'fonts/genericons/genericons/genericons' . KULKURI_SUFFIX . '.css', array(), '3.2' );
 	
 	/* Enqueue comment reply. */
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {

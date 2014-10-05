@@ -35,6 +35,11 @@ I needed this theme and someone else might need it too.
 
 == Changelog ==
 
+= Version 1.1.1 =
+
+* Fix responsive nav settings.
+* Fix Genericons folder and compress CSS.
+
 = Version 1.1.0 =
 
 * Update fixed responsive nav.

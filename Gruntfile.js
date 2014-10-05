@@ -39,6 +39,10 @@ module.exports = function(grunt) {
 			css:{
 				src: 'style.css',
 				dest: 'style.min.css'
+			},
+			genericons: {
+				src: 'fonts/genericons/genericons/genericons.css',
+				dest: 'fonts/genericons/genericons/genericons.min.css'
 			}
 		},
 		
